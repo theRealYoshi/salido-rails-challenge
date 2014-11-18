@@ -26,7 +26,8 @@ Here's what your application must do:
 1. allow an user to add new products to Salido's DB
 1. allow an user to update existing products in Salido'S DB
 1. expose a list of products in Salido'S DB using an API
-1. allow a user to update existing products in Salido'S SD using an API
+1. allow a user to update existing products in Salido'S DB using an API
+1. demonstrate your API calls using RSpec tests
 
 Your application does not need to:
 
