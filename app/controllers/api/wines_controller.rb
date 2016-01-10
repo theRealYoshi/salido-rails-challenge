@@ -1,6 +1,7 @@
 class Api::WinesController < ApplicationController
   def index
     @wines = Wine.all
+    puts @wines
   end
 
   def show
@@ -12,7 +13,7 @@ class Api::WinesController < ApplicationController
   end
 
   def update
-    
+
   end
 
 
