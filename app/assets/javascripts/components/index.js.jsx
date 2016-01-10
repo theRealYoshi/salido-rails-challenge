@@ -26,30 +26,33 @@ var Index = React.createClass({
     return (
       <div className='index'>
         <div className='wines-container'>
+          <p>Add new wines here</p>
           <label>Wine Products:</label>
           {
             this.state.wines.map(function(wine){
               return (
                 <div>
                   <h3>{wine.wine_name}</h3>
+                  <h4>Add show button here</h4>
+                  <h4>Add update button here</h4>
                   <ul>
-                    <li>{wine.wine_id}</li>
-                    <li>{wine.wine_description}</li>
-                    <li>{wine.wine_geolocation}</li>
-                    <li>{wine.wine_url}</li>
-                    <li>{wine.wine_price_min}</li>
-                    <li>{wine.wine_price_max}</li>
-                    <li>{wine.wine_price_retail}</li>
-                    <li>{wine.wine_type}</li>
-                    <li>{wine.wine_year}</li>
-                    <li>{wine.wine_appellation}</li>
-                    <li>{wine.wine_varietal}</li>
-                    <li>{wine.wine_vineyard}</li>
-                    <li>{wine.wine_label}</li>
-                    <li>{wine.wine_rating}</li>
-                    <li>{wine.wine_retail}</li>
-                    <li>{wine.wine_vintage}</li>
-                    <li>{wine.wine_community}</li>
+                    <li>id: {wine.wine_id}</li>
+                    <li>description: {wine.wine_description}</li>
+                    <li>region: {wine.wine_geolocation}</li>
+                    <li>url: {wine.wine_url}</li>
+                    <li>Minimum Price: {wine.wine_price_min}</li>
+                    <li>Maximum Price: {wine.wine_price_max}</li>
+                    <li>Retail Price: {wine.wine_price_retail}</li>
+                    <li>Type: {wine.wine_type}</li>
+                    <li>Year: {wine.wine_year}</li>
+                    <li>Appellation: {wine.wine_appellation}</li>
+                    <li>Varietal: {wine.wine_varietal}</li>
+                    <li>Vineyard: {wine.wine_vineyard}</li>
+                    <li>Label: {wine.wine_label}</li>
+                    <li>Rating: {wine.wine_rating}</li>
+                    <li>Retail: {wine.wine_retail}</li>
+                    <li>Vintage: {wine.wine_vintage}</li>
+                    <li>Community: {wine.wine_community}</li>
                   </ul>
                 </div>
               );

@@ -2397,3 +2397,161 @@ Processing by Api::WinesController#index as JSON
   [1m[36mWine Load (2.1ms)[0m  [1mSELECT "wines".* FROM "wines"[0m
   Rendered api/wines/index.json.jbuilder (89.3ms)
 Completed 200 OK in 164ms (Views: 99.7ms | ActiveRecord: 6.8ms)
+
+
+Started GET "/" for ::1 at 2016-01-09 16:20:16 -0800
+Processing by StaticPagesController#root as HTML
+  Rendered static_pages/root.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 1872ms (Views: 1870.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2016-01-09 16:20:19 -0800
+
+
+Started GET "/assets/wines.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-01-09 16:20:19 -0800
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-01-09 16:20:19 -0800
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2016-01-09 16:20:19 -0800
+
+
+Started GET "/assets/bootstrap.self-6c92f650931beefe48977f272b7015d6b9b45da8b09831ebf88e05193c12d355.js?body=1" for ::1 at 2016-01-09 16:20:19 -0800
+
+
+Started GET "/assets/static_pages.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-01-09 16:20:19 -0800
+
+
+Started GET "/assets/react_ujs.self-73c2ae362693ee5da34cce3bf475fa9d0bad8d0e0ad0458f1d2823f116d9add7.js?body=1" for ::1 at 2016-01-09 16:20:19 -0800
+
+
+Started GET "/assets/development-with-addons/react.self-eb8c71fecbd80164b57078dcf4c66c91c12c9c84b59938c485aea8b6ae3538c1.js?body=1" for ::1 at 2016-01-09 16:20:19 -0800
+
+
+Started GET "/assets/ReactRouter.min.self-0c08710e85e99bdc2b63a49d032bf9a8ac55d74ebb3e4ab8829aa5352e735450.js?body=1" for ::1 at 2016-01-09 16:20:19 -0800
+
+
+Started GET "/assets/flux.self-c2206dc953bbad23c0ee331879560545a4ec58709c89fe78db57a156ec19c08f.js?body=1" for ::1 at 2016-01-09 16:20:19 -0800
+
+
+Started GET "/assets/eventemitter.self-b7e538902dfb3dce50e80598efaa7b435781b7bc8fe936a7aca64a6f2699d411.js?body=1" for ::1 at 2016-01-09 16:20:19 -0800
+
+
+Started GET "/assets/components/index.self-87658f976e708ead54975ff3095865d7801799c2c3c1bc8d2cd9f2793f57f370.js?body=1" for ::1 at 2016-01-09 16:20:19 -0800
+
+
+Started GET "/assets/components.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.js?body=1" for ::1 at 2016-01-09 16:20:19 -0800
+
+
+Started GET "/assets/actions/api_actions.self-9b1fc3ac0719c77c0f875c78931ba97ce39486f2968273bc7effa54953926056.js?body=1" for ::1 at 2016-01-09 16:20:19 -0800
+
+
+Started GET "/assets/constants/wine_constants.self-c7a7ba6b958d8de6076464dff3eb4f268c08186383f310b493daf6853999ec6b.js?body=1" for ::1 at 2016-01-09 16:20:19 -0800
+
+
+Started GET "/assets/dispatcher/dispatcher.self-dcb9c6a400fd3e23de9956aaa56daf6dfa07ae0d567067d3455658871bdb8d82.js?body=1" for ::1 at 2016-01-09 16:20:19 -0800
+
+
+Started GET "/assets/static_pages.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-01-09 16:20:19 -0800
+
+
+Started GET "/assets/stores/wine.self-bb50f40f1d8aef42dc1f84d7ead4714f23fa5256ff6fcedd8a6bff41e733153f.js?body=1" for ::1 at 2016-01-09 16:20:19 -0800
+
+
+Started GET "/assets/util/api_util.self-1d760e299e702563bf8b773ff0082c5cfad558cc5dd9c0fcc2000da68c7fba36.js?body=1" for ::1 at 2016-01-09 16:20:19 -0800
+
+
+Started GET "/assets/wine.self-04d36bfffd5b42df68630b7a77822b6f5708199710fe1b20260ee765f003493b.js?body=1" for ::1 at 2016-01-09 16:20:19 -0800
+
+
+Started GET "/assets/wines.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-01-09 16:20:19 -0800
+
+
+Started GET "/assets/application.self-16c207b3ca1b52afcfc7f4b662487caf1bbe084a6656bb15f693ab9de2d11be7.js?body=1" for ::1 at 2016-01-09 16:20:19 -0800
+
+
+Started GET "/api/wines" for ::1 at 2016-01-09 16:20:19 -0800
+Processing by Api::WinesController#index as JSON
+  [1m[35mWine Load (2.0ms)[0m  SELECT "wines".* FROM "wines"
+  Rendered api/wines/index.json.jbuilder (47.8ms)
+Completed 200 OK in 89ms (Views: 53.9ms | ActiveRecord: 6.2ms)
+
+
+Started GET "/" for ::1 at 2016-01-09 16:21:29 -0800
+Processing by StaticPagesController#root as HTML
+  Rendered static_pages/root.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 1454ms (Views: 1452.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/wines.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-01-09 16:21:31 -0800
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-01-09 16:21:31 -0800
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2016-01-09 16:21:31 -0800
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2016-01-09 16:21:31 -0800
+
+
+Started GET "/assets/bootstrap.self-6c92f650931beefe48977f272b7015d6b9b45da8b09831ebf88e05193c12d355.js?body=1" for ::1 at 2016-01-09 16:21:31 -0800
+
+
+Started GET "/assets/development-with-addons/react.self-eb8c71fecbd80164b57078dcf4c66c91c12c9c84b59938c485aea8b6ae3538c1.js?body=1" for ::1 at 2016-01-09 16:21:31 -0800
+
+
+Started GET "/assets/react_ujs.self-73c2ae362693ee5da34cce3bf475fa9d0bad8d0e0ad0458f1d2823f116d9add7.js?body=1" for ::1 at 2016-01-09 16:21:31 -0800
+
+
+Started GET "/assets/ReactRouter.min.self-0c08710e85e99bdc2b63a49d032bf9a8ac55d74ebb3e4ab8829aa5352e735450.js?body=1" for ::1 at 2016-01-09 16:21:31 -0800
+
+
+Started GET "/assets/static_pages.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-01-09 16:21:31 -0800
+
+
+Started GET "/assets/flux.self-c2206dc953bbad23c0ee331879560545a4ec58709c89fe78db57a156ec19c08f.js?body=1" for ::1 at 2016-01-09 16:21:31 -0800
+
+
+Started GET "/assets/eventemitter.self-b7e538902dfb3dce50e80598efaa7b435781b7bc8fe936a7aca64a6f2699d411.js?body=1" for ::1 at 2016-01-09 16:21:31 -0800
+
+
+Started GET "/assets/components.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.js?body=1" for ::1 at 2016-01-09 16:21:31 -0800
+
+
+Started GET "/assets/actions/api_actions.self-9b1fc3ac0719c77c0f875c78931ba97ce39486f2968273bc7effa54953926056.js?body=1" for ::1 at 2016-01-09 16:21:31 -0800
+
+
+Started GET "/assets/constants/wine_constants.self-c7a7ba6b958d8de6076464dff3eb4f268c08186383f310b493daf6853999ec6b.js?body=1" for ::1 at 2016-01-09 16:21:31 -0800
+
+
+Started GET "/assets/components/index.self-e9f091484a247925b65cf9ef81c828dfd90d9141030339763df2c3b39db3d2a4.js?body=1" for ::1 at 2016-01-09 16:21:31 -0800
+
+
+Started GET "/assets/dispatcher/dispatcher.self-dcb9c6a400fd3e23de9956aaa56daf6dfa07ae0d567067d3455658871bdb8d82.js?body=1" for ::1 at 2016-01-09 16:21:31 -0800
+
+
+Started GET "/assets/static_pages.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-01-09 16:21:31 -0800
+
+
+Started GET "/assets/stores/wine.self-bb50f40f1d8aef42dc1f84d7ead4714f23fa5256ff6fcedd8a6bff41e733153f.js?body=1" for ::1 at 2016-01-09 16:21:31 -0800
+
+
+Started GET "/assets/util/api_util.self-1d760e299e702563bf8b773ff0082c5cfad558cc5dd9c0fcc2000da68c7fba36.js?body=1" for ::1 at 2016-01-09 16:21:31 -0800
+
+
+Started GET "/assets/wine.self-04d36bfffd5b42df68630b7a77822b6f5708199710fe1b20260ee765f003493b.js?body=1" for ::1 at 2016-01-09 16:21:31 -0800
+
+
+Started GET "/assets/wines.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-01-09 16:21:31 -0800
+
+
+Started GET "/assets/application.self-16c207b3ca1b52afcfc7f4b662487caf1bbe084a6656bb15f693ab9de2d11be7.js?body=1" for ::1 at 2016-01-09 16:21:31 -0800
+
+
+Started GET "/api/wines" for ::1 at 2016-01-09 16:21:32 -0800
+Processing by Api::WinesController#index as JSON
+  [1m[36mWine Load (2.1ms)[0m  [1mSELECT "wines".* FROM "wines"[0m
+  Rendered api/wines/index.json.jbuilder (40.5ms)
+Completed 200 OK in 80ms (Views: 46.8ms | ActiveRecord: 6.4ms)
