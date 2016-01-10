@@ -14,7 +14,7 @@ ApiUtil = {
       type: 'post',
       data: { wine: data },
       success: function (wine) {
-        ApiActions.receiveSingleGif(wine);
+        ApiActions.receiveSingleWine(wine);
         callback(wine.id);
       },
       error: function () {

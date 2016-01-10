@@ -37,8 +37,8 @@
     },
     find: function(id){
       var wine;
-     _wines.forEach(function(g) {
-       if(g.id === id) { wine = g; }
+     _wines.forEach(function(w) {
+       if(w.wine_id === id) { wine = w; }
      });
      return wine;
     },

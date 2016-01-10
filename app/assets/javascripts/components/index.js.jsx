@@ -21,6 +21,10 @@ var Index = React.createClass({
   _navigateAddWineForm: function(){
     this.history.pushState(null, "/create", {});
   },
+  _navigateWineShow: function(event){
+    var wineId = event.currentTarget.id;
+    this.history.pushState(null, "/wines/" + wineId, {});
+  },
   render: function(){
     return (
       <div className='index'>
@@ -36,7 +40,10 @@ var Index = React.createClass({
               return (
                 <div>
                   <h3>{wine.wine_name}</h3>
-                  <h4>Add show button here</h4>
+                  <a onClick={this._navigateWineShow}
+                     id={wine.wine_id}>
+                    Wine Page
+                  </a>
                   <h4>Add update button here</h4>
                   <ul>
                     <li>id: {wine.wine_id}</li>
@@ -59,7 +66,7 @@ var Index = React.createClass({
                   </ul>
                 </div>
               );
-            })
+            }.bind(this))
           }
         </div>
       </div>

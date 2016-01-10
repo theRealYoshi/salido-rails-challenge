@@ -5,16 +5,16 @@ ApiActions = {
       wines: wines
     });
   },
-  receiveSingleGif: function(gif){
+  receiveSingleWine: function(wine){
     AppDispatcher.dispatch({
-      actionType: GifConstants.GIF_RECEIVED,
-      gif: gif
+      actionType: WineConstants.WINE_RECEIVED,
+      wine: wine
     });
   },
-  removeSingleGif: function(gif){
+  removeSingleWine: function(wine){
     AppDispatcher.dispatch({
-      actionType: GifConstants.GIF_REMOVED,
-      gif: gif
+      actionType: GifConstants.WINE_REMOVED,
+      wine: wine
     });
   },
   receiveSingleTag: function(tag){

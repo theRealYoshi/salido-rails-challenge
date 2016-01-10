@@ -32,6 +32,7 @@ class Api::WinesController < ApplicationController
     else
       puts "Wine could not be saved"
     end
+    
     render :show
 
   end
