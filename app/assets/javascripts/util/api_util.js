@@ -8,18 +8,17 @@ ApiUtil = {
       }
     });
   },
-  createGif: function(data, callback){
+  createWine: function(data, callback){
     $.ajax({
-      url: '/api/gifs',
+      url: '/api/wines',
       type: 'post',
-      data: { gif: data },
-      success: function (gif) {
-        ApiActions.receiveSingleGif(gif);
-        callback(gif.id);
+      data: { wine: data },
+      success: function (wine) {
+        ApiActions.receiveSingleGif(wine);
+        callback(wine.id);
       },
       error: function () {
-        console.log("You Must Be logged In to perform this action");
-        window.location = "/session/new";
+        console.log("Something went wrong");
       }
     });
   },

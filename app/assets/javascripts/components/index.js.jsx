@@ -18,15 +18,18 @@ var Index = React.createClass({
   componentWillUnmount: function(){
     WineStore.removeChangeListener(this._winesChanged);
   },
-  _handleTagSearch: function(searchTerm){
-    ApiUtil.fetchGifs({tag: searchTerm}, true);
-    this.history.pushState(null, "/search/" + searchTerm, {});
+  _navigateAddWineForm: function(){
+    this.history.pushState(null, "/create", {});
   },
   render: function(){
     return (
       <div className='index'>
         <div className='wines-container'>
-          <p>Add new wines here</p>
+          <a className='create-button'
+             onClick={this._navigateAddWineForm}
+             id="create">
+           Add More Wine to Database
+         </a>
           <label>Wine Products:</label>
           {
             this.state.wines.map(function(wine){

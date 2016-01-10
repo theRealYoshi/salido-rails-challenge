@@ -20,6 +20,7 @@ $(function() {
   var routes = (
       <Route component={App}>
         <Route path="/" component={Index} />
+        <Route path="/create" component={AddWineForm} />
       </Route>
   );
 
