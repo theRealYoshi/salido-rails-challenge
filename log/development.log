@@ -7278,3 +7278,2045 @@ ActionController::RoutingError (No route matches [GET] "/api/gifs/NaN"):
   Rendered /Users/Yoshi/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (1.0ms)
   Rendered /Users/Yoshi/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (1.2ms)
   Rendered /Users/Yoshi/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (109.3ms)
+
+
+Started GET "/" for ::1 at 2016-01-09 22:38:03 -0800
+Processing by StaticPagesController#root as HTML
+  Rendered static_pages/root.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 87ms (Views: 85.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/wines" for ::1 at 2016-01-09 22:38:05 -0800
+Processing by Api::WinesController#index as JSON
+  [1m[36mWine Load (2.0ms)[0m  [1mSELECT "wines".* FROM "wines"[0m
+  Rendered api/wines/index.json.jbuilder (78.3ms)
+Completed 200 OK in 89ms (Views: 86.1ms | ActiveRecord: 2.0ms)
+
+
+Started POST "/api/wines" for ::1 at 2016-01-09 22:38:32 -0800
+Processing by Api::WinesController#create as JSON
+  Parameters: {"wine"=>{"wine_id"=>"574130975423980", "wine_name"=>"Test1", "wine_description"=>"Test1Test1", "wine_geolocation"=>"Test1", "wine_url"=>"Test1", "wine_price_min"=>"Test1", "wine_price_max"=>"Test1", "wine_price_retail"=>"Test1", "wine_type"=>"Test1", "wine_year"=>"Test1", "wine_appellation"=>"Test1", "wine_varietal"=>"Test1", "wine_vineyard"=>"Test1", "wine_label"=>"Test1", "wine_rating"=>"Test1Test1", "wine_retail"=>"Test1", "wine_vintage"=>"Test1", "wine_community"=>"Test1"}}
+  [1m[35m (9.0ms)[0m  BEGIN
+  [1m[36m (0.8ms)[0m  [1mROLLBACK[0m
+Completed 500 Internal Server Error in 48ms (ActiveRecord: 10.2ms)
+
+RangeError - 574130975423980 is out of range for ActiveRecord::ConnectionAdapters::PostgreSQL::OID::Integer with limit 4:
+  activerecord (4.2.3) lib/active_record/type/integer.rb:45:in `ensure_in_range'
+  activerecord (4.2.3) lib/active_record/type/integer.rb:23:in `type_cast_for_database'
+  activerecord (4.2.3) lib/active_record/connection_adapters/abstract/quoting.rb:28:in `type_cast'
+  activerecord (4.2.3) lib/active_record/connection_adapters/postgresql_adapter.rb:602:in `block in exec_cache'
+  activerecord (4.2.3) lib/active_record/connection_adapters/postgresql_adapter.rb:601:in `exec_cache'
+  activerecord (4.2.3) lib/active_record/connection_adapters/postgresql_adapter.rb:589:in `execute_and_clear'
+  activerecord (4.2.3) lib/active_record/connection_adapters/postgresql/database_statements.rb:160:in `exec_query'
+  activerecord (4.2.3) lib/active_record/connection_adapters/postgresql/database_statements.rb:192:in `exec_insert'
+  activerecord (4.2.3) lib/active_record/connection_adapters/abstract/database_statements.rb:108:in `insert'
+  activerecord (4.2.3) lib/active_record/connection_adapters/abstract/query_cache.rb:14:in `insert'
+  activerecord (4.2.3) lib/active_record/relation.rb:64:in `insert'
+  activerecord (4.2.3) lib/active_record/persistence.rb:524:in `_create_record'
+  activerecord (4.2.3) lib/active_record/counter_cache.rb:139:in `_create_record'
+  activerecord (4.2.3) lib/active_record/locking/optimistic.rb:75:in `_create_record'
+  activerecord (4.2.3) lib/active_record/attribute_methods/dirty.rb:132:in `_create_record'
+  activerecord (4.2.3) lib/active_record/callbacks.rb:306:in `block in _create_record'
+  activesupport (4.2.3) lib/active_support/callbacks.rb:84:in `run_callbacks'
+  activerecord (4.2.3) lib/active_record/callbacks.rb:306:in `_create_record'
+  activerecord (4.2.3) lib/active_record/timestamp.rb:57:in `_create_record'
+  activerecord (4.2.3) lib/active_record/persistence.rb:504:in `create_or_update'
+  activerecord (4.2.3) lib/active_record/callbacks.rb:302:in `block in create_or_update'
+  activesupport (4.2.3) lib/active_support/callbacks.rb:84:in `run_callbacks'
+  activerecord (4.2.3) lib/active_record/callbacks.rb:302:in `create_or_update'
+  activerecord (4.2.3) lib/active_record/persistence.rb:120:in `save'
+  activerecord (4.2.3) lib/active_record/validations.rb:37:in `save'
+  activerecord (4.2.3) lib/active_record/attribute_methods/dirty.rb:21:in `save'
+  activerecord (4.2.3) lib/active_record/transactions.rb:286:in `block (2 levels) in save'
+  activerecord (4.2.3) lib/active_record/transactions.rb:351:in `block in with_transaction_returning_status'
+  activerecord (4.2.3) lib/active_record/connection_adapters/abstract/database_statements.rb:213:in `block in transaction'
+  activerecord (4.2.3) lib/active_record/connection_adapters/abstract/transaction.rb:184:in `within_new_transaction'
+  activerecord (4.2.3) lib/active_record/connection_adapters/abstract/database_statements.rb:213:in `transaction'
+  activerecord (4.2.3) lib/active_record/transactions.rb:220:in `transaction'
+  activerecord (4.2.3) lib/active_record/transactions.rb:348:in `with_transaction_returning_status'
+  activerecord (4.2.3) lib/active_record/transactions.rb:286:in `block in save'
+  activerecord (4.2.3) lib/active_record/transactions.rb:301:in `rollback_active_record_state!'
+  activerecord (4.2.3) lib/active_record/transactions.rb:285:in `save'
+  newrelic_rpm (3.14.0.305) lib/new_relic/agent/instrumentation/active_record_helper.rb:26:in `block in save'
+  newrelic_rpm (3.14.0.305) lib/new_relic/agent/transaction.rb:836:in `with_database_metric_name'
+  newrelic_rpm (3.14.0.305) lib/new_relic/agent.rb:572:in `with_database_metric_name'
+  newrelic_rpm (3.14.0.305) lib/new_relic/agent/instrumentation/active_record_helper.rb:25:in `save'
+  activerecord (4.2.3) lib/active_record/persistence.rb:34:in `create'
+  app/controllers/api/wines_controller.rb:11:in `create'
+  actionpack (4.2.3) lib/action_controller/metal/implicit_render.rb:4:in `send_action'
+  actionpack (4.2.3) lib/abstract_controller/base.rb:198:in `process_action'
+  actionpack (4.2.3) lib/action_controller/metal/rendering.rb:10:in `process_action'
+  actionpack (4.2.3) lib/abstract_controller/callbacks.rb:20:in `block in process_action'
+  activesupport (4.2.3) lib/active_support/callbacks.rb:115:in `call'
+  activesupport (4.2.3) lib/active_support/callbacks.rb:553:in `block (2 levels) in compile'
+  activesupport (4.2.3) lib/active_support/callbacks.rb:503:in `call'
+  activesupport (4.2.3) lib/active_support/callbacks.rb:88:in `run_callbacks'
+  actionpack (4.2.3) lib/abstract_controller/callbacks.rb:19:in `process_action'
+  actionpack (4.2.3) lib/action_controller/metal/rescue.rb:29:in `process_action'
+  actionpack (4.2.3) lib/action_controller/metal/instrumentation.rb:32:in `block in process_action'
+  activesupport (4.2.3) lib/active_support/notifications.rb:164:in `block in instrument'
+  activesupport (4.2.3) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (4.2.3) lib/active_support/notifications.rb:164:in `instrument'
+  actionpack (4.2.3) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+  actionpack (4.2.3) lib/action_controller/metal/params_wrapper.rb:250:in `process_action'
+  activerecord (4.2.3) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  actionpack (4.2.3) lib/abstract_controller/base.rb:137:in `process'
+  actionview (4.2.3) lib/action_view/rendering.rb:30:in `process'
+  actionpack (4.2.3) lib/action_controller/metal.rb:196:in `dispatch'
+  actionpack (4.2.3) lib/action_controller/metal/rack_delegation.rb:13:in `dispatch'
+  actionpack (4.2.3) lib/action_controller/metal.rb:237:in `block in action'
+  actionpack (4.2.3) lib/action_dispatch/routing/route_set.rb:76:in `dispatch'
+  actionpack (4.2.3) lib/action_dispatch/routing/route_set.rb:45:in `serve'
+  actionpack (4.2.3) lib/action_dispatch/journey/router.rb:43:in `block in serve'
+  actionpack (4.2.3) lib/action_dispatch/journey/router.rb:30:in `serve'
+  actionpack (4.2.3) lib/action_dispatch/routing/route_set.rb:821:in `call'
+  newrelic_rpm (3.14.0.305) lib/new_relic/agent/instrumentation/middleware_tracing.rb:78:in `call'
+  newrelic_rpm (3.14.0.305) lib/new_relic/rack/agent_hooks.rb:30:in `traced_call'
+  newrelic_rpm (3.14.0.305) lib/new_relic/agent/instrumentation/middleware_tracing.rb:78:in `call'
+  newrelic_rpm (3.14.0.305) lib/new_relic/rack/browser_monitoring.rb:32:in `traced_call'
+  newrelic_rpm (3.14.0.305) lib/new_relic/agent/instrumentation/middleware_tracing.rb:78:in `call'
+  rack (1.6.4) lib/rack/etag.rb:24:in `call'
+  newrelic_rpm (3.14.0.305) lib/new_relic/agent/instrumentation/middleware_tracing.rb:78:in `call'
+  rack (1.6.4) lib/rack/conditionalget.rb:38:in `call'
+  newrelic_rpm (3.14.0.305) lib/new_relic/agent/instrumentation/middleware_tracing.rb:78:in `call'
+  rack (1.6.4) lib/rack/head.rb:13:in `call'
+  newrelic_rpm (3.14.0.305) lib/new_relic/agent/instrumentation/middleware_tracing.rb:78:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  newrelic_rpm (3.14.0.305) lib/new_relic/agent/instrumentation/middleware_tracing.rb:78:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/flash.rb:260:in `call'
+  newrelic_rpm (3.14.0.305) lib/new_relic/agent/instrumentation/middleware_tracing.rb:78:in `call'
+  rack (1.6.4) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.6.4) lib/rack/session/abstract/id.rb:220:in `call'
+  newrelic_rpm (3.14.0.305) lib/new_relic/agent/instrumentation/middleware_tracing.rb:78:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/cookies.rb:560:in `call'
+  newrelic_rpm (3.14.0.305) lib/new_relic/agent/instrumentation/middleware_tracing.rb:78:in `call'
+  activerecord (4.2.3) lib/active_record/query_cache.rb:36:in `call'
+  newrelic_rpm (3.14.0.305) lib/new_relic/agent/instrumentation/middleware_tracing.rb:78:in `call'
+  activerecord (4.2.3) lib/active_record/connection_adapters/abstract/connection_pool.rb:653:in `call'
+  newrelic_rpm (3.14.0.305) lib/new_relic/agent/instrumentation/middleware_tracing.rb:78:in `call'
+  activerecord (4.2.3) lib/active_record/migration.rb:377:in `call'
+  newrelic_rpm (3.14.0.305) lib/new_relic/agent/instrumentation/middleware_tracing.rb:78:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.2.3) lib/active_support/callbacks.rb:84:in `run_callbacks'
+  actionpack (4.2.3) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  newrelic_rpm (3.14.0.305) lib/new_relic/agent/instrumentation/middleware_tracing.rb:78:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  newrelic_rpm (3.14.0.305) lib/new_relic/agent/instrumentation/middleware_tracing.rb:78:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/remote_ip.rb:78:in `call'
+  newrelic_rpm (3.14.0.305) lib/new_relic/agent/instrumentation/middleware_tracing.rb:78:in `call'
+  better_errors (2.1.1) lib/better_errors/middleware.rb:84:in `protected_app_call'
+  better_errors (2.1.1) lib/better_errors/middleware.rb:79:in `better_errors_call'
+  better_errors (2.1.1) lib/better_errors/middleware.rb:57:in `call'
+  newrelic_rpm (3.14.0.305) lib/new_relic/agent/instrumentation/middleware_tracing.rb:78:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  newrelic_rpm (3.14.0.305) lib/new_relic/agent/instrumentation/middleware_tracing.rb:78:in `call'
+  web-console (2.2.1) lib/web_console/middleware.rb:39:in `call'
+  newrelic_rpm (3.14.0.305) lib/new_relic/agent/instrumentation/middleware_tracing.rb:78:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  newrelic_rpm (3.14.0.305) lib/new_relic/agent/instrumentation/middleware_tracing.rb:78:in `call'
+  railties (4.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.3) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.3) lib/rails/rack/logger.rb:20:in `call'
+  newrelic_rpm (3.14.0.305) lib/new_relic/agent/instrumentation/middleware_tracing.rb:78:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  newrelic_rpm (3.14.0.305) lib/new_relic/agent/instrumentation/middleware_tracing.rb:78:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  newrelic_rpm (3.14.0.305) lib/new_relic/agent/instrumentation/middleware_tracing.rb:78:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  newrelic_rpm (3.14.0.305) lib/new_relic/agent/instrumentation/middleware_tracing.rb:78:in `call'
+  activesupport (4.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  newrelic_rpm (3.14.0.305) lib/new_relic/agent/instrumentation/middleware_tracing.rb:78:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  newrelic_rpm (3.14.0.305) lib/new_relic/agent/instrumentation/middleware_tracing.rb:78:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/static.rb:116:in `call'
+  newrelic_rpm (3.14.0.305) lib/new_relic/agent/instrumentation/middleware_tracing.rb:78:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  newrelic_rpm (3.14.0.305) lib/new_relic/agent/instrumentation/middleware_tracing.rb:78:in `call'
+  railties (4.2.3) lib/rails/engine.rb:518:in `call'
+  railties (4.2.3) lib/rails/application.rb:165:in `call'
+  newrelic_rpm (3.14.0.305) lib/new_relic/agent/instrumentation/middleware_tracing.rb:78:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/Yoshi/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /Users/Yoshi/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /Users/Yoshi/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+
+Started GET "/" for ::1 at 2016-01-09 22:39:46 -0800
+Processing by StaticPagesController#root as HTML
+  Rendered static_pages/root.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 69ms (Views: 67.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/static_pages.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-01-09 22:39:47 -0800
+
+
+Started GET "/assets/wines.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-01-09 22:39:47 -0800
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-01-09 22:39:47 -0800
+
+
+Started GET "/assets/bootstrap.self-6c92f650931beefe48977f272b7015d6b9b45da8b09831ebf88e05193c12d355.js?body=1" for ::1 at 2016-01-09 22:39:47 -0800
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2016-01-09 22:39:47 -0800
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2016-01-09 22:39:47 -0800
+
+
+Started GET "/assets/development-with-addons/react.self-eb8c71fecbd80164b57078dcf4c66c91c12c9c84b59938c485aea8b6ae3538c1.js?body=1" for ::1 at 2016-01-09 22:39:47 -0800
+
+
+Started GET "/assets/react_ujs.self-73c2ae362693ee5da34cce3bf475fa9d0bad8d0e0ad0458f1d2823f116d9add7.js?body=1" for ::1 at 2016-01-09 22:39:47 -0800
+
+
+Started GET "/assets/components/index.self-0e627d99b6d77b52b0e0f4d3d01e8acdf9c46b6551f9d7bb36d4586769301902.js?body=1" for ::1 at 2016-01-09 22:39:47 -0800
+
+
+Started GET "/assets/components/updatewineform.self-80d394a6cfdc46291bb3e70fbaa319912d6d979d1302cffde097c722e30c5637.js?body=1" for ::1 at 2016-01-09 22:39:47 -0800
+
+
+Started GET "/assets/components/wineshow.self-ea9267620ce121172a200943420e6466f763cafe10f2260b9a496840e4927411.js?body=1" for ::1 at 2016-01-09 22:39:47 -0800
+
+
+Started GET "/assets/dispatcher/dispatcher.self-dcb9c6a400fd3e23de9956aaa56daf6dfa07ae0d567067d3455658871bdb8d82.js?body=1" for ::1 at 2016-01-09 22:39:47 -0800
+
+
+Started GET "/assets/ReactRouter.min.self-0c08710e85e99bdc2b63a49d032bf9a8ac55d74ebb3e4ab8829aa5352e735450.js?body=1" for ::1 at 2016-01-09 22:39:47 -0800
+
+
+Started GET "/assets/wine.self-13da601c16091a42e03cac12420ef4482d341927cc60cdb02f14aa2c32c1e7dd.js?body=1" for ::1 at 2016-01-09 22:39:47 -0800
+
+
+Started GET "/assets/application.self-16c207b3ca1b52afcfc7f4b662487caf1bbe084a6656bb15f693ab9de2d11be7.js?body=1" for ::1 at 2016-01-09 22:39:47 -0800
+
+
+Started GET "/assets/flux.self-c2206dc953bbad23c0ee331879560545a4ec58709c89fe78db57a156ec19c08f.js?body=1" for ::1 at 2016-01-09 22:39:47 -0800
+
+
+Started GET "/assets/eventemitter.self-b7e538902dfb3dce50e80598efaa7b435781b7bc8fe936a7aca64a6f2699d411.js?body=1" for ::1 at 2016-01-09 22:39:47 -0800
+
+
+Started GET "/assets/components/addwineform.self-c28772e9597d9f2021fe51aeac330a2cdb11fab33475b9a2c1394d3a35863466.js?body=1" for ::1 at 2016-01-09 22:39:47 -0800
+
+
+Started GET "/assets/actions/api_actions.self-f153769414c908144dc28c28f22bc5d62a53b6af2a549d3f92171d658b74251e.js?body=1" for ::1 at 2016-01-09 22:39:47 -0800
+
+
+Started GET "/assets/components.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.js?body=1" for ::1 at 2016-01-09 22:39:47 -0800
+
+
+Started GET "/assets/constants/wine_constants.self-c7a7ba6b958d8de6076464dff3eb4f268c08186383f310b493daf6853999ec6b.js?body=1" for ::1 at 2016-01-09 22:39:48 -0800
+
+
+Started GET "/assets/static_pages.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-01-09 22:39:48 -0800
+
+
+Started GET "/assets/stores/wine.self-155741442996215562ea32cec3b3a749e868b3a77f4f04f47e5389a2f9a565e7.js?body=1" for ::1 at 2016-01-09 22:39:48 -0800
+
+
+Started GET "/assets/util/api_util.self-0d3a53323a2e7f5090f45f1cc6246569af13610595a94cb00a2d7d4006d596ca.js?body=1" for ::1 at 2016-01-09 22:39:48 -0800
+
+
+Started GET "/assets/wines.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-01-09 22:39:48 -0800
+
+
+Started POST "/api/wines" for ::1 at 2016-01-09 22:40:00 -0800
+Processing by Api::WinesController#create as JSON
+  Parameters: {"wine"=>{"wine_id"=>"574130975423980", "wine_name"=>"test1"}}
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+Completed 500 Internal Server Error in 30ms (ActiveRecord: 4.8ms)
+
+RangeError - 574130975423980 is out of range for ActiveRecord::ConnectionAdapters::PostgreSQL::OID::Integer with limit 4:
+  activerecord (4.2.3) lib/active_record/type/integer.rb:45:in `ensure_in_range'
+  activerecord (4.2.3) lib/active_record/type/integer.rb:23:in `type_cast_for_database'
+  activerecord (4.2.3) lib/active_record/connection_adapters/abstract/quoting.rb:28:in `type_cast'
+  activerecord (4.2.3) lib/active_record/connection_adapters/postgresql_adapter.rb:602:in `block in exec_cache'
+  activerecord (4.2.3) lib/active_record/connection_adapters/postgresql_adapter.rb:601:in `exec_cache'
+  activerecord (4.2.3) lib/active_record/connection_adapters/postgresql_adapter.rb:589:in `execute_and_clear'
+  activerecord (4.2.3) lib/active_record/connection_adapters/postgresql/database_statements.rb:160:in `exec_query'
+  activerecord (4.2.3) lib/active_record/connection_adapters/postgresql/database_statements.rb:192:in `exec_insert'
+  activerecord (4.2.3) lib/active_record/connection_adapters/abstract/database_statements.rb:108:in `insert'
+  activerecord (4.2.3) lib/active_record/connection_adapters/abstract/query_cache.rb:14:in `insert'
+  activerecord (4.2.3) lib/active_record/relation.rb:64:in `insert'
+  activerecord (4.2.3) lib/active_record/persistence.rb:524:in `_create_record'
+  activerecord (4.2.3) lib/active_record/counter_cache.rb:139:in `_create_record'
+  activerecord (4.2.3) lib/active_record/locking/optimistic.rb:75:in `_create_record'
+  activerecord (4.2.3) lib/active_record/attribute_methods/dirty.rb:132:in `_create_record'
+  activerecord (4.2.3) lib/active_record/callbacks.rb:306:in `block in _create_record'
+  activesupport (4.2.3) lib/active_support/callbacks.rb:84:in `run_callbacks'
+  activerecord (4.2.3) lib/active_record/callbacks.rb:306:in `_create_record'
+  activerecord (4.2.3) lib/active_record/timestamp.rb:57:in `_create_record'
+  activerecord (4.2.3) lib/active_record/persistence.rb:504:in `create_or_update'
+  activerecord (4.2.3) lib/active_record/callbacks.rb:302:in `block in create_or_update'
+  activesupport (4.2.3) lib/active_support/callbacks.rb:84:in `run_callbacks'
+  activerecord (4.2.3) lib/active_record/callbacks.rb:302:in `create_or_update'
+  activerecord (4.2.3) lib/active_record/persistence.rb:120:in `save'
+  activerecord (4.2.3) lib/active_record/validations.rb:37:in `save'
+  activerecord (4.2.3) lib/active_record/attribute_methods/dirty.rb:21:in `save'
+  activerecord (4.2.3) lib/active_record/transactions.rb:286:in `block (2 levels) in save'
+  activerecord (4.2.3) lib/active_record/transactions.rb:351:in `block in with_transaction_returning_status'
+  activerecord (4.2.3) lib/active_record/connection_adapters/abstract/database_statements.rb:213:in `block in transaction'
+  activerecord (4.2.3) lib/active_record/connection_adapters/abstract/transaction.rb:184:in `within_new_transaction'
+  activerecord (4.2.3) lib/active_record/connection_adapters/abstract/database_statements.rb:213:in `transaction'
+  activerecord (4.2.3) lib/active_record/transactions.rb:220:in `transaction'
+  activerecord (4.2.3) lib/active_record/transactions.rb:348:in `with_transaction_returning_status'
+  activerecord (4.2.3) lib/active_record/transactions.rb:286:in `block in save'
+  activerecord (4.2.3) lib/active_record/transactions.rb:301:in `rollback_active_record_state!'
+  activerecord (4.2.3) lib/active_record/transactions.rb:285:in `save'
+  newrelic_rpm (3.14.0.305) lib/new_relic/agent/instrumentation/active_record_helper.rb:26:in `block in save'
+  newrelic_rpm (3.14.0.305) lib/new_relic/agent/transaction.rb:836:in `with_database_metric_name'
+  newrelic_rpm (3.14.0.305) lib/new_relic/agent.rb:572:in `with_database_metric_name'
+  newrelic_rpm (3.14.0.305) lib/new_relic/agent/instrumentation/active_record_helper.rb:25:in `save'
+  activerecord (4.2.3) lib/active_record/persistence.rb:34:in `create'
+  app/controllers/api/wines_controller.rb:12:in `create'
+  actionpack (4.2.3) lib/action_controller/metal/implicit_render.rb:4:in `send_action'
+  actionpack (4.2.3) lib/abstract_controller/base.rb:198:in `process_action'
+  actionpack (4.2.3) lib/action_controller/metal/rendering.rb:10:in `process_action'
+  actionpack (4.2.3) lib/abstract_controller/callbacks.rb:20:in `block in process_action'
+  activesupport (4.2.3) lib/active_support/callbacks.rb:115:in `call'
+  activesupport (4.2.3) lib/active_support/callbacks.rb:553:in `block (2 levels) in compile'
+  activesupport (4.2.3) lib/active_support/callbacks.rb:503:in `call'
+  activesupport (4.2.3) lib/active_support/callbacks.rb:88:in `run_callbacks'
+  actionpack (4.2.3) lib/abstract_controller/callbacks.rb:19:in `process_action'
+  actionpack (4.2.3) lib/action_controller/metal/rescue.rb:29:in `process_action'
+  actionpack (4.2.3) lib/action_controller/metal/instrumentation.rb:32:in `block in process_action'
+  activesupport (4.2.3) lib/active_support/notifications.rb:164:in `block in instrument'
+  activesupport (4.2.3) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (4.2.3) lib/active_support/notifications.rb:164:in `instrument'
+  actionpack (4.2.3) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+  actionpack (4.2.3) lib/action_controller/metal/params_wrapper.rb:250:in `process_action'
+  activerecord (4.2.3) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  actionpack (4.2.3) lib/abstract_controller/base.rb:137:in `process'
+  actionview (4.2.3) lib/action_view/rendering.rb:30:in `process'
+  actionpack (4.2.3) lib/action_controller/metal.rb:196:in `dispatch'
+  actionpack (4.2.3) lib/action_controller/metal/rack_delegation.rb:13:in `dispatch'
+  actionpack (4.2.3) lib/action_controller/metal.rb:237:in `block in action'
+  actionpack (4.2.3) lib/action_dispatch/routing/route_set.rb:76:in `dispatch'
+  actionpack (4.2.3) lib/action_dispatch/routing/route_set.rb:45:in `serve'
+  actionpack (4.2.3) lib/action_dispatch/journey/router.rb:43:in `block in serve'
+  actionpack (4.2.3) lib/action_dispatch/journey/router.rb:30:in `serve'
+  actionpack (4.2.3) lib/action_dispatch/routing/route_set.rb:821:in `call'
+  newrelic_rpm (3.14.0.305) lib/new_relic/agent/instrumentation/middleware_tracing.rb:78:in `call'
+  newrelic_rpm (3.14.0.305) lib/new_relic/rack/agent_hooks.rb:30:in `traced_call'
+  newrelic_rpm (3.14.0.305) lib/new_relic/agent/instrumentation/middleware_tracing.rb:78:in `call'
+  newrelic_rpm (3.14.0.305) lib/new_relic/rack/browser_monitoring.rb:32:in `traced_call'
+  newrelic_rpm (3.14.0.305) lib/new_relic/agent/instrumentation/middleware_tracing.rb:78:in `call'
+  rack (1.6.4) lib/rack/etag.rb:24:in `call'
+  newrelic_rpm (3.14.0.305) lib/new_relic/agent/instrumentation/middleware_tracing.rb:78:in `call'
+  rack (1.6.4) lib/rack/conditionalget.rb:38:in `call'
+  newrelic_rpm (3.14.0.305) lib/new_relic/agent/instrumentation/middleware_tracing.rb:78:in `call'
+  rack (1.6.4) lib/rack/head.rb:13:in `call'
+  newrelic_rpm (3.14.0.305) lib/new_relic/agent/instrumentation/middleware_tracing.rb:78:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  newrelic_rpm (3.14.0.305) lib/new_relic/agent/instrumentation/middleware_tracing.rb:78:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/flash.rb:260:in `call'
+  newrelic_rpm (3.14.0.305) lib/new_relic/agent/instrumentation/middleware_tracing.rb:78:in `call'
+  rack (1.6.4) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.6.4) lib/rack/session/abstract/id.rb:220:in `call'
+  newrelic_rpm (3.14.0.305) lib/new_relic/agent/instrumentation/middleware_tracing.rb:78:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/cookies.rb:560:in `call'
+  newrelic_rpm (3.14.0.305) lib/new_relic/agent/instrumentation/middleware_tracing.rb:78:in `call'
+  activerecord (4.2.3) lib/active_record/query_cache.rb:36:in `call'
+  newrelic_rpm (3.14.0.305) lib/new_relic/agent/instrumentation/middleware_tracing.rb:78:in `call'
+  activerecord (4.2.3) lib/active_record/connection_adapters/abstract/connection_pool.rb:653:in `call'
+  newrelic_rpm (3.14.0.305) lib/new_relic/agent/instrumentation/middleware_tracing.rb:78:in `call'
+  activerecord (4.2.3) lib/active_record/migration.rb:377:in `call'
+  newrelic_rpm (3.14.0.305) lib/new_relic/agent/instrumentation/middleware_tracing.rb:78:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.2.3) lib/active_support/callbacks.rb:84:in `run_callbacks'
+  actionpack (4.2.3) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  newrelic_rpm (3.14.0.305) lib/new_relic/agent/instrumentation/middleware_tracing.rb:78:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  newrelic_rpm (3.14.0.305) lib/new_relic/agent/instrumentation/middleware_tracing.rb:78:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/remote_ip.rb:78:in `call'
+  newrelic_rpm (3.14.0.305) lib/new_relic/agent/instrumentation/middleware_tracing.rb:78:in `call'
+  better_errors (2.1.1) lib/better_errors/middleware.rb:84:in `protected_app_call'
+  better_errors (2.1.1) lib/better_errors/middleware.rb:79:in `better_errors_call'
+  better_errors (2.1.1) lib/better_errors/middleware.rb:57:in `call'
+  newrelic_rpm (3.14.0.305) lib/new_relic/agent/instrumentation/middleware_tracing.rb:78:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  newrelic_rpm (3.14.0.305) lib/new_relic/agent/instrumentation/middleware_tracing.rb:78:in `call'
+  web-console (2.2.1) lib/web_console/middleware.rb:39:in `call'
+  newrelic_rpm (3.14.0.305) lib/new_relic/agent/instrumentation/middleware_tracing.rb:78:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  newrelic_rpm (3.14.0.305) lib/new_relic/agent/instrumentation/middleware_tracing.rb:78:in `call'
+  railties (4.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.3) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.3) lib/rails/rack/logger.rb:20:in `call'
+  newrelic_rpm (3.14.0.305) lib/new_relic/agent/instrumentation/middleware_tracing.rb:78:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  newrelic_rpm (3.14.0.305) lib/new_relic/agent/instrumentation/middleware_tracing.rb:78:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  newrelic_rpm (3.14.0.305) lib/new_relic/agent/instrumentation/middleware_tracing.rb:78:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  newrelic_rpm (3.14.0.305) lib/new_relic/agent/instrumentation/middleware_tracing.rb:78:in `call'
+  activesupport (4.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  newrelic_rpm (3.14.0.305) lib/new_relic/agent/instrumentation/middleware_tracing.rb:78:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  newrelic_rpm (3.14.0.305) lib/new_relic/agent/instrumentation/middleware_tracing.rb:78:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/static.rb:116:in `call'
+  newrelic_rpm (3.14.0.305) lib/new_relic/agent/instrumentation/middleware_tracing.rb:78:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  newrelic_rpm (3.14.0.305) lib/new_relic/agent/instrumentation/middleware_tracing.rb:78:in `call'
+  railties (4.2.3) lib/rails/engine.rb:518:in `call'
+  railties (4.2.3) lib/rails/application.rb:165:in `call'
+  newrelic_rpm (3.14.0.305) lib/new_relic/agent/instrumentation/middleware_tracing.rb:78:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/Yoshi/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /Users/Yoshi/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /Users/Yoshi/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+
+Started GET "/" for ::1 at 2016-01-09 22:42:48 -0800
+Processing by StaticPagesController#root as HTML
+  Rendered static_pages/root.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 1460ms (Views: 1459.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/bootstrap.self-6c92f650931beefe48977f272b7015d6b9b45da8b09831ebf88e05193c12d355.js?body=1" for ::1 at 2016-01-09 22:42:50 -0800
+
+
+Started GET "/assets/wines.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-01-09 22:42:50 -0800
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-01-09 22:42:50 -0800
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2016-01-09 22:42:50 -0800
+
+
+Started GET "/assets/static_pages.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-01-09 22:42:50 -0800
+
+
+Started GET "/assets/development-with-addons/react.self-eb8c71fecbd80164b57078dcf4c66c91c12c9c84b59938c485aea8b6ae3538c1.js?body=1" for ::1 at 2016-01-09 22:42:50 -0800
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2016-01-09 22:42:50 -0800
+
+
+Started GET "/assets/ReactRouter.min.self-0c08710e85e99bdc2b63a49d032bf9a8ac55d74ebb3e4ab8829aa5352e735450.js?body=1" for ::1 at 2016-01-09 22:42:50 -0800
+
+
+Started GET "/assets/react_ujs.self-73c2ae362693ee5da34cce3bf475fa9d0bad8d0e0ad0458f1d2823f116d9add7.js?body=1" for ::1 at 2016-01-09 22:42:50 -0800
+
+
+Started GET "/assets/flux.self-c2206dc953bbad23c0ee331879560545a4ec58709c89fe78db57a156ec19c08f.js?body=1" for ::1 at 2016-01-09 22:42:50 -0800
+
+
+Started GET "/assets/eventemitter.self-b7e538902dfb3dce50e80598efaa7b435781b7bc8fe936a7aca64a6f2699d411.js?body=1" for ::1 at 2016-01-09 22:42:51 -0800
+
+
+Started GET "/assets/components/index.self-0e627d99b6d77b52b0e0f4d3d01e8acdf9c46b6551f9d7bb36d4586769301902.js?body=1" for ::1 at 2016-01-09 22:42:51 -0800
+
+
+Started GET "/assets/components/updatewineform.self-80d394a6cfdc46291bb3e70fbaa319912d6d979d1302cffde097c722e30c5637.js?body=1" for ::1 at 2016-01-09 22:42:51 -0800
+
+
+Started GET "/assets/components/wineshow.self-ea9267620ce121172a200943420e6466f763cafe10f2260b9a496840e4927411.js?body=1" for ::1 at 2016-01-09 22:42:51 -0800
+
+
+Started GET "/assets/components.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.js?body=1" for ::1 at 2016-01-09 22:42:51 -0800
+
+
+Started GET "/assets/actions/api_actions.self-f153769414c908144dc28c28f22bc5d62a53b6af2a549d3f92171d658b74251e.js?body=1" for ::1 at 2016-01-09 22:42:51 -0800
+
+
+Started GET "/assets/constants/wine_constants.self-c7a7ba6b958d8de6076464dff3eb4f268c08186383f310b493daf6853999ec6b.js?body=1" for ::1 at 2016-01-09 22:42:51 -0800
+
+
+Started GET "/assets/dispatcher/dispatcher.self-dcb9c6a400fd3e23de9956aaa56daf6dfa07ae0d567067d3455658871bdb8d82.js?body=1" for ::1 at 2016-01-09 22:42:51 -0800
+
+
+Started GET "/assets/static_pages.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-01-09 22:42:51 -0800
+
+
+Started GET "/assets/stores/wine.self-155741442996215562ea32cec3b3a749e868b3a77f4f04f47e5389a2f9a565e7.js?body=1" for ::1 at 2016-01-09 22:42:51 -0800
+
+
+Started GET "/assets/util/api_util.self-0d3a53323a2e7f5090f45f1cc6246569af13610595a94cb00a2d7d4006d596ca.js?body=1" for ::1 at 2016-01-09 22:42:51 -0800
+
+
+Started GET "/assets/wine.self-13da601c16091a42e03cac12420ef4482d341927cc60cdb02f14aa2c32c1e7dd.js?body=1" for ::1 at 2016-01-09 22:42:51 -0800
+
+
+Started GET "/assets/wines.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-01-09 22:42:51 -0800
+
+
+Started GET "/assets/application.self-16c207b3ca1b52afcfc7f4b662487caf1bbe084a6656bb15f693ab9de2d11be7.js?body=1" for ::1 at 2016-01-09 22:42:51 -0800
+
+
+Started GET "/assets/components/addwineform.self-99fdf9e01d82ed6167a12e165884f4943c86d04e2c321a55795f2b54b8d3e6bf.js?body=1" for ::1 at 2016-01-09 22:42:51 -0800
+
+
+Started POST "/api/wines" for ::1 at 2016-01-09 22:42:56 -0800
+Processing by Api::WinesController#create as JSON
+  Parameters: {"wine"=>{"wine_id"=>"NaN"}}
+  [1m[35m (0.4ms)[0m  BEGIN
+  [1m[36mSQL (28.3ms)[0m  [1mINSERT INTO "wines" ("wine_id", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["wine_id", 0], ["created_at", "2016-01-10 06:42:56.030763"], ["updated_at", "2016-01-10 06:42:56.030763"]]
+  [1m[35m (1.0ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  COMMIT
+  Rendered api/wines/show.json.jbuilder (1.5ms)
+Completed 200 OK in 95ms (Views: 11.1ms | ActiveRecord: 30.6ms)
+
+
+Started GET "/api/gifs/NaN" for ::1 at 2016-01-09 22:42:56 -0800
+
+ActionController::RoutingError (No route matches [GET] "/api/gifs/NaN"):
+  actionpack (4.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  newrelic_rpm (3.14.0.305) lib/new_relic/agent/instrumentation/middleware_tracing.rb:78:in `call'
+  web-console (2.2.1) lib/web_console/middleware.rb:39:in `call'
+  newrelic_rpm (3.14.0.305) lib/new_relic/agent/instrumentation/middleware_tracing.rb:78:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  newrelic_rpm (3.14.0.305) lib/new_relic/agent/instrumentation/middleware_tracing.rb:78:in `call'
+  railties (4.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.3) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.3) lib/rails/rack/logger.rb:20:in `call'
+  newrelic_rpm (3.14.0.305) lib/new_relic/agent/instrumentation/middleware_tracing.rb:78:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  newrelic_rpm (3.14.0.305) lib/new_relic/agent/instrumentation/middleware_tracing.rb:78:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  newrelic_rpm (3.14.0.305) lib/new_relic/agent/instrumentation/middleware_tracing.rb:78:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  newrelic_rpm (3.14.0.305) lib/new_relic/agent/instrumentation/middleware_tracing.rb:78:in `call'
+  activesupport (4.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  newrelic_rpm (3.14.0.305) lib/new_relic/agent/instrumentation/middleware_tracing.rb:78:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  newrelic_rpm (3.14.0.305) lib/new_relic/agent/instrumentation/middleware_tracing.rb:78:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/static.rb:116:in `call'
+  newrelic_rpm (3.14.0.305) lib/new_relic/agent/instrumentation/middleware_tracing.rb:78:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  newrelic_rpm (3.14.0.305) lib/new_relic/agent/instrumentation/middleware_tracing.rb:78:in `call'
+  railties (4.2.3) lib/rails/engine.rb:518:in `call'
+  railties (4.2.3) lib/rails/application.rb:165:in `call'
+  newrelic_rpm (3.14.0.305) lib/new_relic/agent/instrumentation/middleware_tracing.rb:78:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/Yoshi/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /Users/Yoshi/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /Users/Yoshi/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /Users/Yoshi/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.text.erb (1.0ms)
+  Rendered /Users/Yoshi/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/routing_error.text.erb (17.8ms)
+  Rendered /Users/Yoshi/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.9ms)
+  Rendered /Users/Yoshi/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.7ms)
+  Rendered /Users/Yoshi/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/Yoshi/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.7ms)
+  Rendered /Users/Yoshi/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (56.2ms)
+  Rendered /Users/Yoshi/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.6ms)
+  Rendered /Users/Yoshi/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.7ms)
+  Rendered /Users/Yoshi/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (124.0ms)
+
+
+Started GET "/" for ::1 at 2016-01-09 22:43:02 -0800
+Processing by StaticPagesController#root as HTML
+  Rendered static_pages/root.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 84ms (Views: 83.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/gifs/NaN" for ::1 at 2016-01-09 22:43:03 -0800
+
+ActionController::RoutingError (No route matches [GET] "/api/gifs/NaN"):
+  actionpack (4.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  newrelic_rpm (3.14.0.305) lib/new_relic/agent/instrumentation/middleware_tracing.rb:78:in `call'
+  web-console (2.2.1) lib/web_console/middleware.rb:39:in `call'
+  newrelic_rpm (3.14.0.305) lib/new_relic/agent/instrumentation/middleware_tracing.rb:78:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  newrelic_rpm (3.14.0.305) lib/new_relic/agent/instrumentation/middleware_tracing.rb:78:in `call'
+  railties (4.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.3) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.3) lib/rails/rack/logger.rb:20:in `call'
+  newrelic_rpm (3.14.0.305) lib/new_relic/agent/instrumentation/middleware_tracing.rb:78:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  newrelic_rpm (3.14.0.305) lib/new_relic/agent/instrumentation/middleware_tracing.rb:78:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  newrelic_rpm (3.14.0.305) lib/new_relic/agent/instrumentation/middleware_tracing.rb:78:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  newrelic_rpm (3.14.0.305) lib/new_relic/agent/instrumentation/middleware_tracing.rb:78:in `call'
+  activesupport (4.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  newrelic_rpm (3.14.0.305) lib/new_relic/agent/instrumentation/middleware_tracing.rb:78:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  newrelic_rpm (3.14.0.305) lib/new_relic/agent/instrumentation/middleware_tracing.rb:78:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/static.rb:116:in `call'
+  newrelic_rpm (3.14.0.305) lib/new_relic/agent/instrumentation/middleware_tracing.rb:78:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  newrelic_rpm (3.14.0.305) lib/new_relic/agent/instrumentation/middleware_tracing.rb:78:in `call'
+  railties (4.2.3) lib/rails/engine.rb:518:in `call'
+  railties (4.2.3) lib/rails/application.rb:165:in `call'
+  newrelic_rpm (3.14.0.305) lib/new_relic/agent/instrumentation/middleware_tracing.rb:78:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/Yoshi/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /Users/Yoshi/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /Users/Yoshi/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /Users/Yoshi/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.text.erb (1.6ms)
+  Rendered /Users/Yoshi/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/routing_error.text.erb (27.2ms)
+  Rendered /Users/Yoshi/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (1.1ms)
+  Rendered /Users/Yoshi/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (1.3ms)
+  Rendered /Users/Yoshi/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (1.0ms)
+  Rendered /Users/Yoshi/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (1.5ms)
+  Rendered /Users/Yoshi/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (98.0ms)
+  Rendered /Users/Yoshi/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (1.2ms)
+  Rendered /Users/Yoshi/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (1.3ms)
+  Rendered /Users/Yoshi/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (208.4ms)
+
+
+Started GET "/" for ::1 at 2016-01-09 22:43:10 -0800
+Processing by StaticPagesController#root as HTML
+  Rendered static_pages/root.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 95ms (Views: 94.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/static_pages.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-01-09 22:43:11 -0800
+
+
+Started GET "/assets/wines.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-01-09 22:43:11 -0800
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2016-01-09 22:43:11 -0800
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-01-09 22:43:11 -0800
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2016-01-09 22:43:11 -0800
+
+
+Started GET "/assets/bootstrap.self-6c92f650931beefe48977f272b7015d6b9b45da8b09831ebf88e05193c12d355.js?body=1" for ::1 at 2016-01-09 22:43:11 -0800
+
+
+Started GET "/assets/development-with-addons/react.self-eb8c71fecbd80164b57078dcf4c66c91c12c9c84b59938c485aea8b6ae3538c1.js?body=1" for ::1 at 2016-01-09 22:43:11 -0800
+
+
+Started GET "/assets/react_ujs.self-73c2ae362693ee5da34cce3bf475fa9d0bad8d0e0ad0458f1d2823f116d9add7.js?body=1" for ::1 at 2016-01-09 22:43:11 -0800
+
+
+Started GET "/assets/components/addwineform.self-99fdf9e01d82ed6167a12e165884f4943c86d04e2c321a55795f2b54b8d3e6bf.js?body=1" for ::1 at 2016-01-09 22:43:11 -0800
+
+
+Started GET "/assets/flux.self-c2206dc953bbad23c0ee331879560545a4ec58709c89fe78db57a156ec19c08f.js?body=1" for ::1 at 2016-01-09 22:43:11 -0800
+
+
+Started GET "/assets/eventemitter.self-b7e538902dfb3dce50e80598efaa7b435781b7bc8fe936a7aca64a6f2699d411.js?body=1" for ::1 at 2016-01-09 22:43:11 -0800
+
+
+Started GET "/assets/ReactRouter.min.self-0c08710e85e99bdc2b63a49d032bf9a8ac55d74ebb3e4ab8829aa5352e735450.js?body=1" for ::1 at 2016-01-09 22:43:11 -0800
+
+
+Started GET "/assets/components/index.self-0e627d99b6d77b52b0e0f4d3d01e8acdf9c46b6551f9d7bb36d4586769301902.js?body=1" for ::1 at 2016-01-09 22:43:11 -0800
+
+
+Started GET "/assets/components/updatewineform.self-80d394a6cfdc46291bb3e70fbaa319912d6d979d1302cffde097c722e30c5637.js?body=1" for ::1 at 2016-01-09 22:43:11 -0800
+
+
+Started GET "/assets/components/wineshow.self-ea9267620ce121172a200943420e6466f763cafe10f2260b9a496840e4927411.js?body=1" for ::1 at 2016-01-09 22:43:11 -0800
+
+
+Started GET "/assets/components.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.js?body=1" for ::1 at 2016-01-09 22:43:11 -0800
+
+
+Started GET "/assets/actions/api_actions.self-f153769414c908144dc28c28f22bc5d62a53b6af2a549d3f92171d658b74251e.js?body=1" for ::1 at 2016-01-09 22:43:11 -0800
+
+
+Started GET "/assets/constants/wine_constants.self-c7a7ba6b958d8de6076464dff3eb4f268c08186383f310b493daf6853999ec6b.js?body=1" for ::1 at 2016-01-09 22:43:11 -0800
+
+
+Started GET "/assets/dispatcher/dispatcher.self-dcb9c6a400fd3e23de9956aaa56daf6dfa07ae0d567067d3455658871bdb8d82.js?body=1" for ::1 at 2016-01-09 22:43:11 -0800
+
+
+Started GET "/assets/static_pages.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-01-09 22:43:11 -0800
+
+
+Started GET "/assets/stores/wine.self-155741442996215562ea32cec3b3a749e868b3a77f4f04f47e5389a2f9a565e7.js?body=1" for ::1 at 2016-01-09 22:43:11 -0800
+
+
+Started GET "/assets/util/api_util.self-0d3a53323a2e7f5090f45f1cc6246569af13610595a94cb00a2d7d4006d596ca.js?body=1" for ::1 at 2016-01-09 22:43:11 -0800
+
+
+Started GET "/assets/wine.self-13da601c16091a42e03cac12420ef4482d341927cc60cdb02f14aa2c32c1e7dd.js?body=1" for ::1 at 2016-01-09 22:43:11 -0800
+
+
+Started GET "/assets/wines.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-01-09 22:43:11 -0800
+
+
+Started GET "/assets/application.self-16c207b3ca1b52afcfc7f4b662487caf1bbe084a6656bb15f693ab9de2d11be7.js?body=1" for ::1 at 2016-01-09 22:43:11 -0800
+
+
+Started GET "/api/gifs/NaN" for ::1 at 2016-01-09 22:43:12 -0800
+
+ActionController::RoutingError (No route matches [GET] "/api/gifs/NaN"):
+  actionpack (4.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  newrelic_rpm (3.14.0.305) lib/new_relic/agent/instrumentation/middleware_tracing.rb:78:in `call'
+  web-console (2.2.1) lib/web_console/middleware.rb:39:in `call'
+  newrelic_rpm (3.14.0.305) lib/new_relic/agent/instrumentation/middleware_tracing.rb:78:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  newrelic_rpm (3.14.0.305) lib/new_relic/agent/instrumentation/middleware_tracing.rb:78:in `call'
+  railties (4.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.3) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.3) lib/rails/rack/logger.rb:20:in `call'
+  newrelic_rpm (3.14.0.305) lib/new_relic/agent/instrumentation/middleware_tracing.rb:78:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  newrelic_rpm (3.14.0.305) lib/new_relic/agent/instrumentation/middleware_tracing.rb:78:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  newrelic_rpm (3.14.0.305) lib/new_relic/agent/instrumentation/middleware_tracing.rb:78:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  newrelic_rpm (3.14.0.305) lib/new_relic/agent/instrumentation/middleware_tracing.rb:78:in `call'
+  activesupport (4.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  newrelic_rpm (3.14.0.305) lib/new_relic/agent/instrumentation/middleware_tracing.rb:78:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  newrelic_rpm (3.14.0.305) lib/new_relic/agent/instrumentation/middleware_tracing.rb:78:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/static.rb:116:in `call'
+  newrelic_rpm (3.14.0.305) lib/new_relic/agent/instrumentation/middleware_tracing.rb:78:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  newrelic_rpm (3.14.0.305) lib/new_relic/agent/instrumentation/middleware_tracing.rb:78:in `call'
+  railties (4.2.3) lib/rails/engine.rb:518:in `call'
+  railties (4.2.3) lib/rails/application.rb:165:in `call'
+  newrelic_rpm (3.14.0.305) lib/new_relic/agent/instrumentation/middleware_tracing.rb:78:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/Yoshi/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /Users/Yoshi/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /Users/Yoshi/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /Users/Yoshi/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.text.erb (1.4ms)
+  Rendered /Users/Yoshi/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/routing_error.text.erb (29.5ms)
+  Rendered /Users/Yoshi/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (1.0ms)
+  Rendered /Users/Yoshi/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (1.3ms)
+  Rendered /Users/Yoshi/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (1.1ms)
+  Rendered /Users/Yoshi/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (1.1ms)
+  Rendered /Users/Yoshi/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (79.7ms)
+  Rendered /Users/Yoshi/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (1.1ms)
+  Rendered /Users/Yoshi/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (1.1ms)
+  Rendered /Users/Yoshi/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (167.3ms)
+
+
+Started GET "/" for ::1 at 2016-01-09 22:43:30 -0800
+Processing by StaticPagesController#root as HTML
+  Rendered static_pages/root.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 109ms (Views: 107.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/wines" for ::1 at 2016-01-09 22:43:32 -0800
+Processing by Api::WinesController#index as JSON
+  [1m[36mWine Load (2.0ms)[0m  [1mSELECT "wines".* FROM "wines"[0m
+  Rendered api/wines/index.json.jbuilder (51.9ms)
+Completed 200 OK in 62ms (Views: 59.0ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/" for ::1 at 2016-01-10 16:02:07 -0800
+  [1m[36mActiveRecord::SchemaMigration Load (26.9ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by StaticPagesController#root as HTML
+  Rendered static_pages/root.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 1091ms (Views: 1076.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/static_pages.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-01-10 16:02:09 -0800
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2016-01-10 16:02:09 -0800
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2016-01-10 16:02:09 -0800
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-01-10 16:02:09 -0800
+
+
+Started GET "/assets/wines.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-01-10 16:02:09 -0800
+
+
+Started GET "/assets/bootstrap.self-6c92f650931beefe48977f272b7015d6b9b45da8b09831ebf88e05193c12d355.js?body=1" for ::1 at 2016-01-10 16:02:09 -0800
+
+
+Started GET "/assets/development-with-addons/react.self-eb8c71fecbd80164b57078dcf4c66c91c12c9c84b59938c485aea8b6ae3538c1.js?body=1" for ::1 at 2016-01-10 16:02:09 -0800
+
+
+Started GET "/assets/react_ujs.self-73c2ae362693ee5da34cce3bf475fa9d0bad8d0e0ad0458f1d2823f116d9add7.js?body=1" for ::1 at 2016-01-10 16:02:09 -0800
+
+
+Started GET "/assets/ReactRouter.min.self-0c08710e85e99bdc2b63a49d032bf9a8ac55d74ebb3e4ab8829aa5352e735450.js?body=1" for ::1 at 2016-01-10 16:02:09 -0800
+
+
+Started GET "/assets/flux.self-c2206dc953bbad23c0ee331879560545a4ec58709c89fe78db57a156ec19c08f.js?body=1" for ::1 at 2016-01-10 16:02:09 -0800
+
+
+Started GET "/assets/eventemitter.self-b7e538902dfb3dce50e80598efaa7b435781b7bc8fe936a7aca64a6f2699d411.js?body=1" for ::1 at 2016-01-10 16:02:09 -0800
+
+
+Started GET "/assets/components/addwineform.self-99fdf9e01d82ed6167a12e165884f4943c86d04e2c321a55795f2b54b8d3e6bf.js?body=1" for ::1 at 2016-01-10 16:02:09 -0800
+
+
+Started GET "/assets/components/index.self-0e627d99b6d77b52b0e0f4d3d01e8acdf9c46b6551f9d7bb36d4586769301902.js?body=1" for ::1 at 2016-01-10 16:02:09 -0800
+
+
+Started GET "/assets/components/updatewineform.self-80d394a6cfdc46291bb3e70fbaa319912d6d979d1302cffde097c722e30c5637.js?body=1" for ::1 at 2016-01-10 16:02:09 -0800
+
+
+Started GET "/assets/components/wineshow.self-ea9267620ce121172a200943420e6466f763cafe10f2260b9a496840e4927411.js?body=1" for ::1 at 2016-01-10 16:02:09 -0800
+
+
+Started GET "/assets/components.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.js?body=1" for ::1 at 2016-01-10 16:02:09 -0800
+
+
+Started GET "/assets/actions/api_actions.self-f153769414c908144dc28c28f22bc5d62a53b6af2a549d3f92171d658b74251e.js?body=1" for ::1 at 2016-01-10 16:02:09 -0800
+
+
+Started GET "/assets/constants/wine_constants.self-c7a7ba6b958d8de6076464dff3eb4f268c08186383f310b493daf6853999ec6b.js?body=1" for ::1 at 2016-01-10 16:02:09 -0800
+
+
+Started GET "/assets/dispatcher/dispatcher.self-dcb9c6a400fd3e23de9956aaa56daf6dfa07ae0d567067d3455658871bdb8d82.js?body=1" for ::1 at 2016-01-10 16:02:09 -0800
+
+
+Started GET "/assets/static_pages.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-01-10 16:02:09 -0800
+
+
+Started GET "/assets/stores/wine.self-155741442996215562ea32cec3b3a749e868b3a77f4f04f47e5389a2f9a565e7.js?body=1" for ::1 at 2016-01-10 16:02:09 -0800
+
+
+Started GET "/assets/util/api_util.self-0d3a53323a2e7f5090f45f1cc6246569af13610595a94cb00a2d7d4006d596ca.js?body=1" for ::1 at 2016-01-10 16:02:09 -0800
+
+
+Started GET "/assets/wine.self-13da601c16091a42e03cac12420ef4482d341927cc60cdb02f14aa2c32c1e7dd.js?body=1" for ::1 at 2016-01-10 16:02:10 -0800
+
+
+Started GET "/assets/wines.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-01-10 16:02:10 -0800
+
+
+Started GET "/assets/application.self-16c207b3ca1b52afcfc7f4b662487caf1bbe084a6656bb15f693ab9de2d11be7.js?body=1" for ::1 at 2016-01-10 16:02:10 -0800
+
+
+Started GET "/assets/bootstrap.self-6c92f650931beefe48977f272b7015d6b9b45da8b09831ebf88e05193c12d355.js?body=1" for ::1 at 2016-01-10 16:02:10 -0800
+
+
+Started GET "/assets/development-with-addons/react.self-eb8c71fecbd80164b57078dcf4c66c91c12c9c84b59938c485aea8b6ae3538c1.js?body=1" for ::1 at 2016-01-10 16:02:10 -0800
+
+
+Started GET "/assets/react_ujs.self-73c2ae362693ee5da34cce3bf475fa9d0bad8d0e0ad0458f1d2823f116d9add7.js?body=1" for ::1 at 2016-01-10 16:02:10 -0800
+
+
+Started GET "/assets/ReactRouter.min.self-0c08710e85e99bdc2b63a49d032bf9a8ac55d74ebb3e4ab8829aa5352e735450.js?body=1" for ::1 at 2016-01-10 16:02:10 -0800
+
+
+Started GET "/api/wines" for ::1 at 2016-01-10 16:02:10 -0800
+Processing by Api::WinesController#index as JSON
+  [1m[35mWine Load (28.6ms)[0m  SELECT "wines".* FROM "wines"
+  Rendered api/wines/index.json.jbuilder (118.4ms)
+Completed 200 OK in 130ms (Views: 84.3ms | ActiveRecord: 42.8ms)
+
+
+Started POST "/api/wines" for ::1 at 2016-01-10 16:02:24 -0800
+Processing by Api::WinesController#create as JSON
+  Parameters: {"wine"=>{"wine_id"=>"3214135", "wine_name"=>"4325egdadsfd", "wine_description"=>"dasgafads", "wine_geolocation"=>"gadsfads", "wine_url"=>"gadsfads", "wine_price_min"=>"fadsgasdg", "wine_price_max"=>"fdasfads", "wine_type"=>"gadsgagasd", "wine_appellation"=>"gasdgads", "wine_vineyard"=>"agsadgdas", "wine_rating"=>"dasgdas", "wine_vintage"=>"gadgdas", "wine_community"=>"gda"}}
+  [1m[36m (6.5ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (28.2ms)[0m  INSERT INTO "wines" ("wine_id", "wine_description", "wine_geolocation", "wine_url", "wine_price_min", "wine_price_max", "wine_type", "wine_appellation", "wine_vineyard", "wine_rating", "wine_vintage", "wine_community", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14) RETURNING "id"  [["wine_id", 3214135], ["wine_description", "dasgafads"], ["wine_geolocation", "gadsfads"], ["wine_url", "gadsfads"], ["wine_price_min", "fadsgasdg"], ["wine_price_max", "fdasfads"], ["wine_type", "gadsgagasd"], ["wine_appellation", "gasdgads"], ["wine_vineyard", "agsadgdas"], ["wine_rating", "dasgdas"], ["wine_vintage", "gadgdas"], ["wine_community", "gda"], ["created_at", "2016-01-11 00:02:24.632325"], ["updated_at", "2016-01-11 00:02:24.632325"]]
+  [1m[36m (2.0ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  Rendered api/wines/show.json.jbuilder (0.8ms)
+Completed 200 OK in 60ms (Views: 7.2ms | ActiveRecord: 38.0ms)
+
+
+Started GET "/api/gifs/NaN" for ::1 at 2016-01-10 16:02:24 -0800
+
+ActionController::RoutingError (No route matches [GET] "/api/gifs/NaN"):
+  actionpack (4.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  newrelic_rpm (3.14.0.305) lib/new_relic/agent/instrumentation/middleware_tracing.rb:78:in `call'
+  web-console (2.2.1) lib/web_console/middleware.rb:39:in `call'
+  newrelic_rpm (3.14.0.305) lib/new_relic/agent/instrumentation/middleware_tracing.rb:78:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  newrelic_rpm (3.14.0.305) lib/new_relic/agent/instrumentation/middleware_tracing.rb:78:in `call'
+  railties (4.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.3) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.3) lib/rails/rack/logger.rb:20:in `call'
+  newrelic_rpm (3.14.0.305) lib/new_relic/agent/instrumentation/middleware_tracing.rb:78:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  newrelic_rpm (3.14.0.305) lib/new_relic/agent/instrumentation/middleware_tracing.rb:78:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  newrelic_rpm (3.14.0.305) lib/new_relic/agent/instrumentation/middleware_tracing.rb:78:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  newrelic_rpm (3.14.0.305) lib/new_relic/agent/instrumentation/middleware_tracing.rb:78:in `call'
+  activesupport (4.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  newrelic_rpm (3.14.0.305) lib/new_relic/agent/instrumentation/middleware_tracing.rb:78:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  newrelic_rpm (3.14.0.305) lib/new_relic/agent/instrumentation/middleware_tracing.rb:78:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/static.rb:116:in `call'
+  newrelic_rpm (3.14.0.305) lib/new_relic/agent/instrumentation/middleware_tracing.rb:78:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  newrelic_rpm (3.14.0.305) lib/new_relic/agent/instrumentation/middleware_tracing.rb:78:in `call'
+  railties (4.2.3) lib/rails/engine.rb:518:in `call'
+  railties (4.2.3) lib/rails/application.rb:165:in `call'
+  newrelic_rpm (3.14.0.305) lib/new_relic/agent/instrumentation/middleware_tracing.rb:78:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/Yoshi/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /Users/Yoshi/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /Users/Yoshi/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /Users/Yoshi/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.text.erb (1.0ms)
+  Rendered /Users/Yoshi/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/routing_error.text.erb (25.6ms)
+  Rendered /Users/Yoshi/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.7ms)
+  Rendered /Users/Yoshi/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/Yoshi/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/Yoshi/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/Yoshi/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (58.5ms)
+  Rendered /Users/Yoshi/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/Yoshi/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.8ms)
+  Rendered /Users/Yoshi/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (132.9ms)
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mWine Load (2.2ms)[0m  SELECT  "wines".* FROM "wines"  ORDER BY "wines"."id" DESC LIMIT 1
+
+
+Started GET "/" for ::1 at 2016-01-10 16:06:43 -0800
+Processing by StaticPagesController#root as HTML
+  Rendered static_pages/root.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 435ms (Views: 433.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/static_pages.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-01-10 16:06:45 -0800
+
+
+Started GET "/assets/wines.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-01-10 16:06:45 -0800
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2016-01-10 16:06:45 -0800
+
+
+Started GET "/assets/bootstrap.self-6c92f650931beefe48977f272b7015d6b9b45da8b09831ebf88e05193c12d355.js?body=1" for ::1 at 2016-01-10 16:06:45 -0800
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-01-10 16:06:45 -0800
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2016-01-10 16:06:45 -0800
+
+
+Started GET "/assets/react_ujs.self-73c2ae362693ee5da34cce3bf475fa9d0bad8d0e0ad0458f1d2823f116d9add7.js?body=1" for ::1 at 2016-01-10 16:06:45 -0800
+
+
+Started GET "/assets/ReactRouter.min.self-0c08710e85e99bdc2b63a49d032bf9a8ac55d74ebb3e4ab8829aa5352e735450.js?body=1" for ::1 at 2016-01-10 16:06:45 -0800
+
+
+Started GET "/assets/flux.self-c2206dc953bbad23c0ee331879560545a4ec58709c89fe78db57a156ec19c08f.js?body=1" for ::1 at 2016-01-10 16:06:45 -0800
+
+
+Started GET "/assets/eventemitter.self-b7e538902dfb3dce50e80598efaa7b435781b7bc8fe936a7aca64a6f2699d411.js?body=1" for ::1 at 2016-01-10 16:06:45 -0800
+
+
+Started GET "/assets/components/addwineform.self-99fdf9e01d82ed6167a12e165884f4943c86d04e2c321a55795f2b54b8d3e6bf.js?body=1" for ::1 at 2016-01-10 16:06:45 -0800
+
+
+Started GET "/assets/development-with-addons/react.self-eb8c71fecbd80164b57078dcf4c66c91c12c9c84b59938c485aea8b6ae3538c1.js?body=1" for ::1 at 2016-01-10 16:06:45 -0800
+
+
+Started GET "/assets/components/updatewineform.self-80d394a6cfdc46291bb3e70fbaa319912d6d979d1302cffde097c722e30c5637.js?body=1" for ::1 at 2016-01-10 16:06:45 -0800
+
+
+Started GET "/assets/components/index.self-0e627d99b6d77b52b0e0f4d3d01e8acdf9c46b6551f9d7bb36d4586769301902.js?body=1" for ::1 at 2016-01-10 16:06:45 -0800
+
+
+Started GET "/assets/components/wineshow.self-ea9267620ce121172a200943420e6466f763cafe10f2260b9a496840e4927411.js?body=1" for ::1 at 2016-01-10 16:06:45 -0800
+
+
+Started GET "/assets/components.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.js?body=1" for ::1 at 2016-01-10 16:06:45 -0800
+
+
+Started GET "/assets/actions/api_actions.self-f153769414c908144dc28c28f22bc5d62a53b6af2a549d3f92171d658b74251e.js?body=1" for ::1 at 2016-01-10 16:06:45 -0800
+
+
+Started GET "/assets/constants/wine_constants.self-c7a7ba6b958d8de6076464dff3eb4f268c08186383f310b493daf6853999ec6b.js?body=1" for ::1 at 2016-01-10 16:06:45 -0800
+
+
+Started GET "/assets/dispatcher/dispatcher.self-dcb9c6a400fd3e23de9956aaa56daf6dfa07ae0d567067d3455658871bdb8d82.js?body=1" for ::1 at 2016-01-10 16:06:45 -0800
+
+
+Started GET "/assets/static_pages.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-01-10 16:06:45 -0800
+
+
+Started GET "/assets/stores/wine.self-155741442996215562ea32cec3b3a749e868b3a77f4f04f47e5389a2f9a565e7.js?body=1" for ::1 at 2016-01-10 16:06:45 -0800
+
+
+Started GET "/assets/util/api_util.self-40f17f91295a26da34ac86825056267dbb1191de86d70e8e2d89539ffe20e213.js?body=1" for ::1 at 2016-01-10 16:06:45 -0800
+
+
+Started GET "/assets/wine.self-13da601c16091a42e03cac12420ef4482d341927cc60cdb02f14aa2c32c1e7dd.js?body=1" for ::1 at 2016-01-10 16:06:45 -0800
+
+
+Started GET "/assets/wines.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-01-10 16:06:45 -0800
+
+
+Started GET "/assets/application.self-16c207b3ca1b52afcfc7f4b662487caf1bbe084a6656bb15f693ab9de2d11be7.js?body=1" for ::1 at 2016-01-10 16:06:45 -0800
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2016-01-10 16:06:45 -0800
+
+
+Started GET "/assets/development-with-addons/react.self-eb8c71fecbd80164b57078dcf4c66c91c12c9c84b59938c485aea8b6ae3538c1.js?body=1" for ::1 at 2016-01-10 16:06:45 -0800
+
+
+Started GET "/assets/react_ujs.self-73c2ae362693ee5da34cce3bf475fa9d0bad8d0e0ad0458f1d2823f116d9add7.js?body=1" for ::1 at 2016-01-10 16:06:45 -0800
+
+
+Started GET "/assets/ReactRouter.min.self-0c08710e85e99bdc2b63a49d032bf9a8ac55d74ebb3e4ab8829aa5352e735450.js?body=1" for ::1 at 2016-01-10 16:06:45 -0800
+
+
+Started GET "/assets/util/api_util.self-40f17f91295a26da34ac86825056267dbb1191de86d70e8e2d89539ffe20e213.js?body=1" for ::1 at 2016-01-10 16:06:45 -0800
+
+
+Started GET "/api/gifs/NaN" for ::1 at 2016-01-10 16:06:45 -0800
+
+ActionController::RoutingError (No route matches [GET] "/api/gifs/NaN"):
+  actionpack (4.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  newrelic_rpm (3.14.0.305) lib/new_relic/agent/instrumentation/middleware_tracing.rb:78:in `call'
+  web-console (2.2.1) lib/web_console/middleware.rb:39:in `call'
+  newrelic_rpm (3.14.0.305) lib/new_relic/agent/instrumentation/middleware_tracing.rb:78:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  newrelic_rpm (3.14.0.305) lib/new_relic/agent/instrumentation/middleware_tracing.rb:78:in `call'
+  railties (4.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.3) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.3) lib/rails/rack/logger.rb:20:in `call'
+  newrelic_rpm (3.14.0.305) lib/new_relic/agent/instrumentation/middleware_tracing.rb:78:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  newrelic_rpm (3.14.0.305) lib/new_relic/agent/instrumentation/middleware_tracing.rb:78:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  newrelic_rpm (3.14.0.305) lib/new_relic/agent/instrumentation/middleware_tracing.rb:78:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  newrelic_rpm (3.14.0.305) lib/new_relic/agent/instrumentation/middleware_tracing.rb:78:in `call'
+  activesupport (4.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  newrelic_rpm (3.14.0.305) lib/new_relic/agent/instrumentation/middleware_tracing.rb:78:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  newrelic_rpm (3.14.0.305) lib/new_relic/agent/instrumentation/middleware_tracing.rb:78:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/static.rb:116:in `call'
+  newrelic_rpm (3.14.0.305) lib/new_relic/agent/instrumentation/middleware_tracing.rb:78:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  newrelic_rpm (3.14.0.305) lib/new_relic/agent/instrumentation/middleware_tracing.rb:78:in `call'
+  railties (4.2.3) lib/rails/engine.rb:518:in `call'
+  railties (4.2.3) lib/rails/application.rb:165:in `call'
+  newrelic_rpm (3.14.0.305) lib/new_relic/agent/instrumentation/middleware_tracing.rb:78:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/Yoshi/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /Users/Yoshi/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /Users/Yoshi/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /Users/Yoshi/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.text.erb (1.6ms)
+  Rendered /Users/Yoshi/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/routing_error.text.erb (34.1ms)
+  Rendered /Users/Yoshi/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (1.0ms)
+  Rendered /Users/Yoshi/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.8ms)
+  Rendered /Users/Yoshi/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.7ms)
+  Rendered /Users/Yoshi/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (1.8ms)
+  Rendered /Users/Yoshi/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (87.4ms)
+  Rendered /Users/Yoshi/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.8ms)
+  Rendered /Users/Yoshi/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.8ms)
+  Rendered /Users/Yoshi/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (210.7ms)
+
+
+Started GET "/" for ::1 at 2016-01-10 16:07:13 -0800
+Processing by StaticPagesController#root as HTML
+  Rendered static_pages/root.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 77ms (Views: 75.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2016-01-10 16:07:13 -0800
+Processing by StaticPagesController#root as HTML
+  Rendered static_pages/root.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 79ms (Views: 78.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/wines" for ::1 at 2016-01-10 16:07:14 -0800
+Processing by Api::WinesController#index as JSON
+  [1m[35mWine Load (1.8ms)[0m  SELECT "wines".* FROM "wines"
+  Rendered api/wines/index.json.jbuilder (103.4ms)
+Completed 200 OK in 118ms (Views: 106.8ms | ActiveRecord: 5.9ms)
+
+
+Started GET "/api/wines" for ::1 at 2016-01-10 16:07:15 -0800
+Processing by Api::WinesController#index as JSON
+  [1m[36mWine Load (1.9ms)[0m  [1mSELECT "wines".* FROM "wines"[0m
+  Rendered api/wines/index.json.jbuilder (43.2ms)
+Completed 200 OK in 53ms (Views: 50.2ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/api/gifs/NaN" for ::1 at 2016-01-10 16:07:19 -0800
+
+ActionController::RoutingError (No route matches [GET] "/api/gifs/NaN"):
+  actionpack (4.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  newrelic_rpm (3.14.0.305) lib/new_relic/agent/instrumentation/middleware_tracing.rb:78:in `call'
+  web-console (2.2.1) lib/web_console/middleware.rb:39:in `call'
+  newrelic_rpm (3.14.0.305) lib/new_relic/agent/instrumentation/middleware_tracing.rb:78:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  newrelic_rpm (3.14.0.305) lib/new_relic/agent/instrumentation/middleware_tracing.rb:78:in `call'
+  railties (4.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.3) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.3) lib/rails/rack/logger.rb:20:in `call'
+  newrelic_rpm (3.14.0.305) lib/new_relic/agent/instrumentation/middleware_tracing.rb:78:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  newrelic_rpm (3.14.0.305) lib/new_relic/agent/instrumentation/middleware_tracing.rb:78:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  newrelic_rpm (3.14.0.305) lib/new_relic/agent/instrumentation/middleware_tracing.rb:78:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  newrelic_rpm (3.14.0.305) lib/new_relic/agent/instrumentation/middleware_tracing.rb:78:in `call'
+  activesupport (4.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  newrelic_rpm (3.14.0.305) lib/new_relic/agent/instrumentation/middleware_tracing.rb:78:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  newrelic_rpm (3.14.0.305) lib/new_relic/agent/instrumentation/middleware_tracing.rb:78:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/static.rb:116:in `call'
+  newrelic_rpm (3.14.0.305) lib/new_relic/agent/instrumentation/middleware_tracing.rb:78:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  newrelic_rpm (3.14.0.305) lib/new_relic/agent/instrumentation/middleware_tracing.rb:78:in `call'
+  railties (4.2.3) lib/rails/engine.rb:518:in `call'
+  railties (4.2.3) lib/rails/application.rb:165:in `call'
+  newrelic_rpm (3.14.0.305) lib/new_relic/agent/instrumentation/middleware_tracing.rb:78:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/Yoshi/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /Users/Yoshi/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /Users/Yoshi/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /Users/Yoshi/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.text.erb (1.1ms)
+  Rendered /Users/Yoshi/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/routing_error.text.erb (17.9ms)
+  Rendered /Users/Yoshi/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.6ms)
+  Rendered /Users/Yoshi/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/Yoshi/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.7ms)
+  Rendered /Users/Yoshi/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/Yoshi/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (56.8ms)
+  Rendered /Users/Yoshi/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/Yoshi/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.9ms)
+  Rendered /Users/Yoshi/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (118.3ms)
+
+
+Started GET "/" for ::1 at 2016-01-10 16:08:01 -0800
+Processing by StaticPagesController#root as HTML
+  Rendered static_pages/root.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 67ms (Views: 66.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/wines" for ::1 at 2016-01-10 16:08:02 -0800
+Processing by Api::WinesController#index as JSON
+  [1m[35mWine Load (1.9ms)[0m  SELECT "wines".* FROM "wines"
+  Rendered api/wines/index.json.jbuilder (86.8ms)
+Completed 200 OK in 100ms (Views: 90.3ms | ActiveRecord: 5.5ms)
+
+
+Started POST "/api/wines" for ::1 at 2016-01-10 16:08:17 -0800
+Processing by Api::WinesController#create as JSON
+  Parameters: {"wine"=>{"wine_id"=>"1341", "wine_name"=>"45325423", "wine_description"=>"gerfd", "wine_geolocation"=>"345rtsdaf", "wine_url"=>"345rtsdaf"}}
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.8ms)[0m  INSERT INTO "wines" ("wine_id", "wine_description", "wine_geolocation", "wine_url", "wine_price_min", "wine_price_max", "wine_price_retail", "wine_type", "wine_year", "wine_appellation", "wine_varietal", "wine_vineyard", "wine_label", "wine_rating", "wine_retail", "wine_vintage", "wine_community", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17, $18, $19) RETURNING "id"  [["wine_id", 1341], ["wine_description", "gerfd"], ["wine_geolocation", "345rtsdaf"], ["wine_url", "345rtsdaf"], ["wine_price_min", ""], ["wine_price_max", ""], ["wine_price_retail", ""], ["wine_type", ""], ["wine_year", ""], ["wine_appellation", ""], ["wine_varietal", ""], ["wine_vineyard", ""], ["wine_label", ""], ["wine_rating", ""], ["wine_retail", ""], ["wine_vintage", ""], ["wine_community", ""], ["created_at", "2016-01-11 00:08:17.628640"], ["updated_at", "2016-01-11 00:08:17.628640"]]
+  [1m[36m (7.9ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  Rendered api/wines/show.json.jbuilder (0.5ms)
+Completed 200 OK in 28ms (Views: 6.0ms | ActiveRecord: 10.3ms)
+
+
+Started GET "/api/gifs/NaN" for ::1 at 2016-01-10 16:08:44 -0800
+
+ActionController::RoutingError (No route matches [GET] "/api/gifs/NaN"):
+  actionpack (4.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  newrelic_rpm (3.14.0.305) lib/new_relic/agent/instrumentation/middleware_tracing.rb:78:in `call'
+  web-console (2.2.1) lib/web_console/middleware.rb:39:in `call'
+  newrelic_rpm (3.14.0.305) lib/new_relic/agent/instrumentation/middleware_tracing.rb:78:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  newrelic_rpm (3.14.0.305) lib/new_relic/agent/instrumentation/middleware_tracing.rb:78:in `call'
+  railties (4.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.3) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.3) lib/rails/rack/logger.rb:20:in `call'
+  newrelic_rpm (3.14.0.305) lib/new_relic/agent/instrumentation/middleware_tracing.rb:78:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  newrelic_rpm (3.14.0.305) lib/new_relic/agent/instrumentation/middleware_tracing.rb:78:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  newrelic_rpm (3.14.0.305) lib/new_relic/agent/instrumentation/middleware_tracing.rb:78:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  newrelic_rpm (3.14.0.305) lib/new_relic/agent/instrumentation/middleware_tracing.rb:78:in `call'
+  activesupport (4.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  newrelic_rpm (3.14.0.305) lib/new_relic/agent/instrumentation/middleware_tracing.rb:78:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  newrelic_rpm (3.14.0.305) lib/new_relic/agent/instrumentation/middleware_tracing.rb:78:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/static.rb:116:in `call'
+  newrelic_rpm (3.14.0.305) lib/new_relic/agent/instrumentation/middleware_tracing.rb:78:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  newrelic_rpm (3.14.0.305) lib/new_relic/agent/instrumentation/middleware_tracing.rb:78:in `call'
+  railties (4.2.3) lib/rails/engine.rb:518:in `call'
+  railties (4.2.3) lib/rails/application.rb:165:in `call'
+  newrelic_rpm (3.14.0.305) lib/new_relic/agent/instrumentation/middleware_tracing.rb:78:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/Yoshi/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /Users/Yoshi/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /Users/Yoshi/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /Users/Yoshi/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.text.erb (1.3ms)
+  Rendered /Users/Yoshi/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/routing_error.text.erb (30.8ms)
+  Rendered /Users/Yoshi/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (1.1ms)
+  Rendered /Users/Yoshi/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.9ms)
+  Rendered /Users/Yoshi/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.8ms)
+  Rendered /Users/Yoshi/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.9ms)
+  Rendered /Users/Yoshi/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (106.0ms)
+  Rendered /Users/Yoshi/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.8ms)
+  Rendered /Users/Yoshi/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (5.5ms)
+  Rendered /Users/Yoshi/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (218.6ms)
+
+
+Started GET "/" for ::1 at 2016-01-10 16:09:27 -0800
+Processing by StaticPagesController#root as HTML
+  Rendered static_pages/root.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 469ms (Views: 467.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/static_pages.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-01-10 16:09:28 -0800
+
+
+Started GET "/assets/wines.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-01-10 16:09:28 -0800
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2016-01-10 16:09:28 -0800
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-01-10 16:09:28 -0800
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2016-01-10 16:09:28 -0800
+
+
+Started GET "/assets/react_ujs.self-73c2ae362693ee5da34cce3bf475fa9d0bad8d0e0ad0458f1d2823f116d9add7.js?body=1" for ::1 at 2016-01-10 16:09:28 -0800
+
+
+Started GET "/assets/bootstrap.self-6c92f650931beefe48977f272b7015d6b9b45da8b09831ebf88e05193c12d355.js?body=1" for ::1 at 2016-01-10 16:09:28 -0800
+
+
+Started GET "/assets/development-with-addons/react.self-eb8c71fecbd80164b57078dcf4c66c91c12c9c84b59938c485aea8b6ae3538c1.js?body=1" for ::1 at 2016-01-10 16:09:28 -0800
+
+
+Started GET "/assets/ReactRouter.min.self-0c08710e85e99bdc2b63a49d032bf9a8ac55d74ebb3e4ab8829aa5352e735450.js?body=1" for ::1 at 2016-01-10 16:09:28 -0800
+
+
+Started GET "/assets/flux.self-c2206dc953bbad23c0ee331879560545a4ec58709c89fe78db57a156ec19c08f.js?body=1" for ::1 at 2016-01-10 16:09:28 -0800
+
+
+Started GET "/assets/eventemitter.self-b7e538902dfb3dce50e80598efaa7b435781b7bc8fe936a7aca64a6f2699d411.js?body=1" for ::1 at 2016-01-10 16:09:28 -0800
+
+
+Started GET "/assets/components/index.self-0e627d99b6d77b52b0e0f4d3d01e8acdf9c46b6551f9d7bb36d4586769301902.js?body=1" for ::1 at 2016-01-10 16:09:28 -0800
+
+
+Started GET "/assets/components/updatewineform.self-80d394a6cfdc46291bb3e70fbaa319912d6d979d1302cffde097c722e30c5637.js?body=1" for ::1 at 2016-01-10 16:09:29 -0800
+
+
+Started GET "/assets/components/addwineform.self-99fdf9e01d82ed6167a12e165884f4943c86d04e2c321a55795f2b54b8d3e6bf.js?body=1" for ::1 at 2016-01-10 16:09:29 -0800
+
+
+Started GET "/assets/components/wineshow.self-ea9267620ce121172a200943420e6466f763cafe10f2260b9a496840e4927411.js?body=1" for ::1 at 2016-01-10 16:09:29 -0800
+
+
+Started GET "/assets/components.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.js?body=1" for ::1 at 2016-01-10 16:09:29 -0800
+
+
+Started GET "/assets/actions/api_actions.self-f153769414c908144dc28c28f22bc5d62a53b6af2a549d3f92171d658b74251e.js?body=1" for ::1 at 2016-01-10 16:09:29 -0800
+
+
+Started GET "/assets/constants/wine_constants.self-c7a7ba6b958d8de6076464dff3eb4f268c08186383f310b493daf6853999ec6b.js?body=1" for ::1 at 2016-01-10 16:09:29 -0800
+
+
+Started GET "/assets/dispatcher/dispatcher.self-dcb9c6a400fd3e23de9956aaa56daf6dfa07ae0d567067d3455658871bdb8d82.js?body=1" for ::1 at 2016-01-10 16:09:29 -0800
+
+
+Started GET "/assets/static_pages.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-01-10 16:09:29 -0800
+
+
+Started GET "/assets/stores/wine.self-155741442996215562ea32cec3b3a749e868b3a77f4f04f47e5389a2f9a565e7.js?body=1" for ::1 at 2016-01-10 16:09:29 -0800
+
+
+Started GET "/assets/util/api_util.self-5e4cab4f61e48c6d29d13b7f0cec79155f5c1a6edae95d08876d903972c623d9.js?body=1" for ::1 at 2016-01-10 16:09:29 -0800
+
+
+Started GET "/assets/wines.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-01-10 16:09:29 -0800
+
+
+Started GET "/assets/wine.self-13da601c16091a42e03cac12420ef4482d341927cc60cdb02f14aa2c32c1e7dd.js?body=1" for ::1 at 2016-01-10 16:09:29 -0800
+
+
+Started GET "/assets/application.self-16c207b3ca1b52afcfc7f4b662487caf1bbe084a6656bb15f693ab9de2d11be7.js?body=1" for ::1 at 2016-01-10 16:09:29 -0800
+
+
+Started GET "/assets/development-with-addons/react.self-eb8c71fecbd80164b57078dcf4c66c91c12c9c84b59938c485aea8b6ae3538c1.js?body=1" for ::1 at 2016-01-10 16:09:29 -0800
+
+
+Started GET "/assets/util/api_util.self-5e4cab4f61e48c6d29d13b7f0cec79155f5c1a6edae95d08876d903972c623d9.js?body=1" for ::1 at 2016-01-10 16:09:29 -0800
+
+
+Started GET "/api/gifs/NaN" for ::1 at 2016-01-10 16:09:29 -0800
+
+ActionController::RoutingError (No route matches [GET] "/api/gifs/NaN"):
+  actionpack (4.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  newrelic_rpm (3.14.0.305) lib/new_relic/agent/instrumentation/middleware_tracing.rb:78:in `call'
+  web-console (2.2.1) lib/web_console/middleware.rb:39:in `call'
+  newrelic_rpm (3.14.0.305) lib/new_relic/agent/instrumentation/middleware_tracing.rb:78:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  newrelic_rpm (3.14.0.305) lib/new_relic/agent/instrumentation/middleware_tracing.rb:78:in `call'
+  railties (4.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.3) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.3) lib/rails/rack/logger.rb:20:in `call'
+  newrelic_rpm (3.14.0.305) lib/new_relic/agent/instrumentation/middleware_tracing.rb:78:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  newrelic_rpm (3.14.0.305) lib/new_relic/agent/instrumentation/middleware_tracing.rb:78:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  newrelic_rpm (3.14.0.305) lib/new_relic/agent/instrumentation/middleware_tracing.rb:78:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  newrelic_rpm (3.14.0.305) lib/new_relic/agent/instrumentation/middleware_tracing.rb:78:in `call'
+  activesupport (4.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  newrelic_rpm (3.14.0.305) lib/new_relic/agent/instrumentation/middleware_tracing.rb:78:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  newrelic_rpm (3.14.0.305) lib/new_relic/agent/instrumentation/middleware_tracing.rb:78:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/static.rb:116:in `call'
+  newrelic_rpm (3.14.0.305) lib/new_relic/agent/instrumentation/middleware_tracing.rb:78:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  newrelic_rpm (3.14.0.305) lib/new_relic/agent/instrumentation/middleware_tracing.rb:78:in `call'
+  railties (4.2.3) lib/rails/engine.rb:518:in `call'
+  railties (4.2.3) lib/rails/application.rb:165:in `call'
+  newrelic_rpm (3.14.0.305) lib/new_relic/agent/instrumentation/middleware_tracing.rb:78:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/Yoshi/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /Users/Yoshi/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /Users/Yoshi/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /Users/Yoshi/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.text.erb (1.3ms)
+  Rendered /Users/Yoshi/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/routing_error.text.erb (28.0ms)
+  Rendered /Users/Yoshi/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.7ms)
+  Rendered /Users/Yoshi/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.8ms)
+  Rendered /Users/Yoshi/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (1.1ms)
+  Rendered /Users/Yoshi/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.8ms)
+  Rendered /Users/Yoshi/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (91.6ms)
+  Rendered /Users/Yoshi/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.8ms)
+  Rendered /Users/Yoshi/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.9ms)
+  Rendered /Users/Yoshi/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (185.7ms)
+
+
+Started GET "/" for ::1 at 2016-01-10 16:09:33 -0800
+Processing by StaticPagesController#root as HTML
+  Rendered static_pages/root.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 82ms (Views: 81.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/wines" for ::1 at 2016-01-10 16:09:34 -0800
+Processing by Api::WinesController#index as JSON
+  [1m[35mWine Load (2.1ms)[0m  SELECT "wines".* FROM "wines"
+  Rendered api/wines/index.json.jbuilder (94.8ms)
+Completed 200 OK in 111ms (Views: 100.0ms | ActiveRecord: 7.2ms)
+
+
+Started POST "/api/wines" for ::1 at 2016-01-10 16:09:46 -0800
+Processing by Api::WinesController#create as JSON
+  Parameters: {"wine"=>{"wine_id"=>"431431584390", "wine_name"=>"asjdfalgjlj", "wine_description"=>"ljkdjlkjf", "wine_geolocation"=>"kljfkdlajsklfj", "wine_url"=>"kljfkdlajsklfj", "wine_price_min"=>"lkgjlqkdgjlk", "wine_price_max"=>"jglke", "wine_price_retail"=>"jgkle", "wine_type"=>"jgklj", "wine_year"=>"lkgj", "wine_appellation"=>"lkg", "wine_varietal"=>"jkle", "wine_vineyard"=>"gjlk", "wine_label"=>"jegkle", "wine_rating"=>"jglk", "wine_retail"=>"jegklj", "wine_vintage"=>"egklje", "wine_community"=>"lkgj"}}
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  ROLLBACK
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.6ms)
+
+RangeError - 431431584390 is out of range for ActiveRecord::ConnectionAdapters::PostgreSQL::OID::Integer with limit 4:
+  activerecord (4.2.3) lib/active_record/type/integer.rb:45:in `ensure_in_range'
+  activerecord (4.2.3) lib/active_record/type/integer.rb:23:in `type_cast_for_database'
+  activerecord (4.2.3) lib/active_record/connection_adapters/abstract/quoting.rb:28:in `type_cast'
+  activerecord (4.2.3) lib/active_record/connection_adapters/postgresql_adapter.rb:602:in `block in exec_cache'
+  activerecord (4.2.3) lib/active_record/connection_adapters/postgresql_adapter.rb:601:in `exec_cache'
+  activerecord (4.2.3) lib/active_record/connection_adapters/postgresql_adapter.rb:589:in `execute_and_clear'
+  activerecord (4.2.3) lib/active_record/connection_adapters/postgresql/database_statements.rb:160:in `exec_query'
+  activerecord (4.2.3) lib/active_record/connection_adapters/postgresql/database_statements.rb:192:in `exec_insert'
+  activerecord (4.2.3) lib/active_record/connection_adapters/abstract/database_statements.rb:108:in `insert'
+  activerecord (4.2.3) lib/active_record/connection_adapters/abstract/query_cache.rb:14:in `insert'
+  activerecord (4.2.3) lib/active_record/relation.rb:64:in `insert'
+  activerecord (4.2.3) lib/active_record/persistence.rb:524:in `_create_record'
+  activerecord (4.2.3) lib/active_record/counter_cache.rb:139:in `_create_record'
+  activerecord (4.2.3) lib/active_record/locking/optimistic.rb:75:in `_create_record'
+  activerecord (4.2.3) lib/active_record/attribute_methods/dirty.rb:132:in `_create_record'
+  activerecord (4.2.3) lib/active_record/callbacks.rb:306:in `block in _create_record'
+  activesupport (4.2.3) lib/active_support/callbacks.rb:84:in `run_callbacks'
+  activerecord (4.2.3) lib/active_record/callbacks.rb:306:in `_create_record'
+  activerecord (4.2.3) lib/active_record/timestamp.rb:57:in `_create_record'
+  activerecord (4.2.3) lib/active_record/persistence.rb:504:in `create_or_update'
+  activerecord (4.2.3) lib/active_record/callbacks.rb:302:in `block in create_or_update'
+  activesupport (4.2.3) lib/active_support/callbacks.rb:84:in `run_callbacks'
+  activerecord (4.2.3) lib/active_record/callbacks.rb:302:in `create_or_update'
+  activerecord (4.2.3) lib/active_record/persistence.rb:120:in `save'
+  activerecord (4.2.3) lib/active_record/validations.rb:37:in `save'
+  activerecord (4.2.3) lib/active_record/attribute_methods/dirty.rb:21:in `save'
+  activerecord (4.2.3) lib/active_record/transactions.rb:286:in `block (2 levels) in save'
+  activerecord (4.2.3) lib/active_record/transactions.rb:351:in `block in with_transaction_returning_status'
+  activerecord (4.2.3) lib/active_record/connection_adapters/abstract/database_statements.rb:213:in `block in transaction'
+  activerecord (4.2.3) lib/active_record/connection_adapters/abstract/transaction.rb:184:in `within_new_transaction'
+  activerecord (4.2.3) lib/active_record/connection_adapters/abstract/database_statements.rb:213:in `transaction'
+  activerecord (4.2.3) lib/active_record/transactions.rb:220:in `transaction'
+  activerecord (4.2.3) lib/active_record/transactions.rb:348:in `with_transaction_returning_status'
+  activerecord (4.2.3) lib/active_record/transactions.rb:286:in `block in save'
+  activerecord (4.2.3) lib/active_record/transactions.rb:301:in `rollback_active_record_state!'
+  activerecord (4.2.3) lib/active_record/transactions.rb:285:in `save'
+  newrelic_rpm (3.14.0.305) lib/new_relic/agent/instrumentation/active_record_helper.rb:26:in `block in save'
+  newrelic_rpm (3.14.0.305) lib/new_relic/agent/transaction.rb:836:in `with_database_metric_name'
+  newrelic_rpm (3.14.0.305) lib/new_relic/agent.rb:572:in `with_database_metric_name'
+  newrelic_rpm (3.14.0.305) lib/new_relic/agent/instrumentation/active_record_helper.rb:25:in `save'
+  activerecord (4.2.3) lib/active_record/persistence.rb:34:in `create'
+  app/controllers/api/wines_controller.rb:12:in `create'
+  actionpack (4.2.3) lib/action_controller/metal/implicit_render.rb:4:in `send_action'
+  actionpack (4.2.3) lib/abstract_controller/base.rb:198:in `process_action'
+  actionpack (4.2.3) lib/action_controller/metal/rendering.rb:10:in `process_action'
+  actionpack (4.2.3) lib/abstract_controller/callbacks.rb:20:in `block in process_action'
+  activesupport (4.2.3) lib/active_support/callbacks.rb:115:in `call'
+  activesupport (4.2.3) lib/active_support/callbacks.rb:553:in `block (2 levels) in compile'
+  activesupport (4.2.3) lib/active_support/callbacks.rb:503:in `call'
+  activesupport (4.2.3) lib/active_support/callbacks.rb:88:in `run_callbacks'
+  actionpack (4.2.3) lib/abstract_controller/callbacks.rb:19:in `process_action'
+  actionpack (4.2.3) lib/action_controller/metal/rescue.rb:29:in `process_action'
+  actionpack (4.2.3) lib/action_controller/metal/instrumentation.rb:32:in `block in process_action'
+  activesupport (4.2.3) lib/active_support/notifications.rb:164:in `block in instrument'
+  activesupport (4.2.3) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (4.2.3) lib/active_support/notifications.rb:164:in `instrument'
+  actionpack (4.2.3) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+  actionpack (4.2.3) lib/action_controller/metal/params_wrapper.rb:250:in `process_action'
+  activerecord (4.2.3) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  actionpack (4.2.3) lib/abstract_controller/base.rb:137:in `process'
+  actionview (4.2.3) lib/action_view/rendering.rb:30:in `process'
+  actionpack (4.2.3) lib/action_controller/metal.rb:196:in `dispatch'
+  actionpack (4.2.3) lib/action_controller/metal/rack_delegation.rb:13:in `dispatch'
+  actionpack (4.2.3) lib/action_controller/metal.rb:237:in `block in action'
+  actionpack (4.2.3) lib/action_dispatch/routing/route_set.rb:76:in `dispatch'
+  actionpack (4.2.3) lib/action_dispatch/routing/route_set.rb:45:in `serve'
+  actionpack (4.2.3) lib/action_dispatch/journey/router.rb:43:in `block in serve'
+  actionpack (4.2.3) lib/action_dispatch/journey/router.rb:30:in `serve'
+  actionpack (4.2.3) lib/action_dispatch/routing/route_set.rb:821:in `call'
+  newrelic_rpm (3.14.0.305) lib/new_relic/agent/instrumentation/middleware_tracing.rb:78:in `call'
+  newrelic_rpm (3.14.0.305) lib/new_relic/rack/agent_hooks.rb:30:in `traced_call'
+  newrelic_rpm (3.14.0.305) lib/new_relic/agent/instrumentation/middleware_tracing.rb:78:in `call'
+  newrelic_rpm (3.14.0.305) lib/new_relic/rack/browser_monitoring.rb:32:in `traced_call'
+  newrelic_rpm (3.14.0.305) lib/new_relic/agent/instrumentation/middleware_tracing.rb:78:in `call'
+  rack (1.6.4) lib/rack/etag.rb:24:in `call'
+  newrelic_rpm (3.14.0.305) lib/new_relic/agent/instrumentation/middleware_tracing.rb:78:in `call'
+  rack (1.6.4) lib/rack/conditionalget.rb:38:in `call'
+  newrelic_rpm (3.14.0.305) lib/new_relic/agent/instrumentation/middleware_tracing.rb:78:in `call'
+  rack (1.6.4) lib/rack/head.rb:13:in `call'
+  newrelic_rpm (3.14.0.305) lib/new_relic/agent/instrumentation/middleware_tracing.rb:78:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  newrelic_rpm (3.14.0.305) lib/new_relic/agent/instrumentation/middleware_tracing.rb:78:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/flash.rb:260:in `call'
+  newrelic_rpm (3.14.0.305) lib/new_relic/agent/instrumentation/middleware_tracing.rb:78:in `call'
+  rack (1.6.4) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.6.4) lib/rack/session/abstract/id.rb:220:in `call'
+  newrelic_rpm (3.14.0.305) lib/new_relic/agent/instrumentation/middleware_tracing.rb:78:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/cookies.rb:560:in `call'
+  newrelic_rpm (3.14.0.305) lib/new_relic/agent/instrumentation/middleware_tracing.rb:78:in `call'
+  activerecord (4.2.3) lib/active_record/query_cache.rb:36:in `call'
+  newrelic_rpm (3.14.0.305) lib/new_relic/agent/instrumentation/middleware_tracing.rb:78:in `call'
+  activerecord (4.2.3) lib/active_record/connection_adapters/abstract/connection_pool.rb:653:in `call'
+  newrelic_rpm (3.14.0.305) lib/new_relic/agent/instrumentation/middleware_tracing.rb:78:in `call'
+  activerecord (4.2.3) lib/active_record/migration.rb:377:in `call'
+  newrelic_rpm (3.14.0.305) lib/new_relic/agent/instrumentation/middleware_tracing.rb:78:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.2.3) lib/active_support/callbacks.rb:84:in `run_callbacks'
+  actionpack (4.2.3) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  newrelic_rpm (3.14.0.305) lib/new_relic/agent/instrumentation/middleware_tracing.rb:78:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  newrelic_rpm (3.14.0.305) lib/new_relic/agent/instrumentation/middleware_tracing.rb:78:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/remote_ip.rb:78:in `call'
+  newrelic_rpm (3.14.0.305) lib/new_relic/agent/instrumentation/middleware_tracing.rb:78:in `call'
+  better_errors (2.1.1) lib/better_errors/middleware.rb:84:in `protected_app_call'
+  better_errors (2.1.1) lib/better_errors/middleware.rb:79:in `better_errors_call'
+  better_errors (2.1.1) lib/better_errors/middleware.rb:57:in `call'
+  newrelic_rpm (3.14.0.305) lib/new_relic/agent/instrumentation/middleware_tracing.rb:78:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  newrelic_rpm (3.14.0.305) lib/new_relic/agent/instrumentation/middleware_tracing.rb:78:in `call'
+  web-console (2.2.1) lib/web_console/middleware.rb:39:in `call'
+  newrelic_rpm (3.14.0.305) lib/new_relic/agent/instrumentation/middleware_tracing.rb:78:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  newrelic_rpm (3.14.0.305) lib/new_relic/agent/instrumentation/middleware_tracing.rb:78:in `call'
+  railties (4.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.3) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.3) lib/rails/rack/logger.rb:20:in `call'
+  newrelic_rpm (3.14.0.305) lib/new_relic/agent/instrumentation/middleware_tracing.rb:78:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  newrelic_rpm (3.14.0.305) lib/new_relic/agent/instrumentation/middleware_tracing.rb:78:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  newrelic_rpm (3.14.0.305) lib/new_relic/agent/instrumentation/middleware_tracing.rb:78:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  newrelic_rpm (3.14.0.305) lib/new_relic/agent/instrumentation/middleware_tracing.rb:78:in `call'
+  activesupport (4.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  newrelic_rpm (3.14.0.305) lib/new_relic/agent/instrumentation/middleware_tracing.rb:78:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  newrelic_rpm (3.14.0.305) lib/new_relic/agent/instrumentation/middleware_tracing.rb:78:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/static.rb:116:in `call'
+  newrelic_rpm (3.14.0.305) lib/new_relic/agent/instrumentation/middleware_tracing.rb:78:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  newrelic_rpm (3.14.0.305) lib/new_relic/agent/instrumentation/middleware_tracing.rb:78:in `call'
+  railties (4.2.3) lib/rails/engine.rb:518:in `call'
+  railties (4.2.3) lib/rails/application.rb:165:in `call'
+  newrelic_rpm (3.14.0.305) lib/new_relic/agent/instrumentation/middleware_tracing.rb:78:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/Yoshi/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /Users/Yoshi/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /Users/Yoshi/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+
+Started POST "/api/wines" for ::1 at 2016-01-10 16:10:24 -0800
+Processing by Api::WinesController#create as JSON
+  Parameters: {"wine"=>{"wine_id"=>"4314315", "wine_name"=>"asjdfalgjlj", "wine_description"=>"ljkdjlkjf", "wine_geolocation"=>"kljfkdlajsklfj", "wine_url"=>"kljfkdlajsklfj", "wine_price_min"=>"lkgjlqkdgjlk", "wine_price_max"=>"jglke", "wine_price_retail"=>"jgkle", "wine_type"=>"jgklj", "wine_year"=>"lkgj", "wine_appellation"=>"lkg", "wine_varietal"=>"jkle", "wine_vineyard"=>"gjlk", "wine_label"=>"jegkle", "wine_rating"=>"jglk", "wine_retail"=>"jegklj", "wine_vintage"=>"egklje", "wine_community"=>"lkgj"}}
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "wines" ("wine_id", "wine_name", "wine_description", "wine_geolocation", "wine_url", "wine_price_min", "wine_price_max", "wine_price_retail", "wine_type", "wine_year", "wine_appellation", "wine_varietal", "wine_vineyard", "wine_label", "wine_rating", "wine_retail", "wine_vintage", "wine_community", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17, $18, $19, $20) RETURNING "id"  [["wine_id", 4314315], ["wine_name", "asjdfalgjlj"], ["wine_description", "ljkdjlkjf"], ["wine_geolocation", "kljfkdlajsklfj"], ["wine_url", "kljfkdlajsklfj"], ["wine_price_min", "lkgjlqkdgjlk"], ["wine_price_max", "jglke"], ["wine_price_retail", "jgkle"], ["wine_type", "jgklj"], ["wine_year", "lkgj"], ["wine_appellation", "lkg"], ["wine_varietal", "jkle"], ["wine_vineyard", "gjlk"], ["wine_label", "jegkle"], ["wine_rating", "jglk"], ["wine_retail", "jegklj"], ["wine_vintage", "egklje"], ["wine_community", "lkgj"], ["created_at", "2016-01-11 00:10:24.132784"], ["updated_at", "2016-01-11 00:10:24.132784"]]
+  [1m[36m (7.6ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  Rendered api/wines/show.json.jbuilder (0.8ms)
+Completed 200 OK in 28ms (Views: 8.5ms | ActiveRecord: 9.7ms)
+
+
+Started GET "/api/gifs/NaN" for ::1 at 2016-01-10 16:10:24 -0800
+
+ActionController::RoutingError (No route matches [GET] "/api/gifs/NaN"):
+  actionpack (4.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  newrelic_rpm (3.14.0.305) lib/new_relic/agent/instrumentation/middleware_tracing.rb:78:in `call'
+  web-console (2.2.1) lib/web_console/middleware.rb:39:in `call'
+  newrelic_rpm (3.14.0.305) lib/new_relic/agent/instrumentation/middleware_tracing.rb:78:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  newrelic_rpm (3.14.0.305) lib/new_relic/agent/instrumentation/middleware_tracing.rb:78:in `call'
+  railties (4.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.3) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.3) lib/rails/rack/logger.rb:20:in `call'
+  newrelic_rpm (3.14.0.305) lib/new_relic/agent/instrumentation/middleware_tracing.rb:78:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  newrelic_rpm (3.14.0.305) lib/new_relic/agent/instrumentation/middleware_tracing.rb:78:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  newrelic_rpm (3.14.0.305) lib/new_relic/agent/instrumentation/middleware_tracing.rb:78:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  newrelic_rpm (3.14.0.305) lib/new_relic/agent/instrumentation/middleware_tracing.rb:78:in `call'
+  activesupport (4.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  newrelic_rpm (3.14.0.305) lib/new_relic/agent/instrumentation/middleware_tracing.rb:78:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  newrelic_rpm (3.14.0.305) lib/new_relic/agent/instrumentation/middleware_tracing.rb:78:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/static.rb:116:in `call'
+  newrelic_rpm (3.14.0.305) lib/new_relic/agent/instrumentation/middleware_tracing.rb:78:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  newrelic_rpm (3.14.0.305) lib/new_relic/agent/instrumentation/middleware_tracing.rb:78:in `call'
+  railties (4.2.3) lib/rails/engine.rb:518:in `call'
+  railties (4.2.3) lib/rails/application.rb:165:in `call'
+  newrelic_rpm (3.14.0.305) lib/new_relic/agent/instrumentation/middleware_tracing.rb:78:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/Yoshi/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /Users/Yoshi/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /Users/Yoshi/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /Users/Yoshi/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.text.erb (0.9ms)
+  Rendered /Users/Yoshi/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/routing_error.text.erb (30.3ms)
+  Rendered /Users/Yoshi/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (1.0ms)
+  Rendered /Users/Yoshi/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.9ms)
+  Rendered /Users/Yoshi/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.9ms)
+  Rendered /Users/Yoshi/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (1.2ms)
+  Rendered /Users/Yoshi/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (81.8ms)
+  Rendered /Users/Yoshi/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/Yoshi/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (1.0ms)
+  Rendered /Users/Yoshi/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (178.7ms)
+
+
+Started GET "/" for ::1 at 2016-01-10 16:11:06 -0800
+Processing by StaticPagesController#root as HTML
+  Rendered static_pages/root.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 71ms (Views: 69.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/static_pages.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-01-10 16:11:07 -0800
+
+
+Started GET "/assets/wines.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-01-10 16:11:07 -0800
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2016-01-10 16:11:07 -0800
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2016-01-10 16:11:07 -0800
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-01-10 16:11:07 -0800
+
+
+Started GET "/assets/development-with-addons/react.self-eb8c71fecbd80164b57078dcf4c66c91c12c9c84b59938c485aea8b6ae3538c1.js?body=1" for ::1 at 2016-01-10 16:11:07 -0800
+
+
+Started GET "/assets/bootstrap.self-6c92f650931beefe48977f272b7015d6b9b45da8b09831ebf88e05193c12d355.js?body=1" for ::1 at 2016-01-10 16:11:07 -0800
+
+
+Started GET "/assets/react_ujs.self-73c2ae362693ee5da34cce3bf475fa9d0bad8d0e0ad0458f1d2823f116d9add7.js?body=1" for ::1 at 2016-01-10 16:11:07 -0800
+
+
+Started GET "/assets/ReactRouter.min.self-0c08710e85e99bdc2b63a49d032bf9a8ac55d74ebb3e4ab8829aa5352e735450.js?body=1" for ::1 at 2016-01-10 16:11:07 -0800
+
+
+Started GET "/assets/flux.self-c2206dc953bbad23c0ee331879560545a4ec58709c89fe78db57a156ec19c08f.js?body=1" for ::1 at 2016-01-10 16:11:07 -0800
+
+
+Started GET "/assets/eventemitter.self-b7e538902dfb3dce50e80598efaa7b435781b7bc8fe936a7aca64a6f2699d411.js?body=1" for ::1 at 2016-01-10 16:11:07 -0800
+
+
+Started GET "/assets/components/addwineform.self-99fdf9e01d82ed6167a12e165884f4943c86d04e2c321a55795f2b54b8d3e6bf.js?body=1" for ::1 at 2016-01-10 16:11:07 -0800
+
+
+Started GET "/assets/components/index.self-0e627d99b6d77b52b0e0f4d3d01e8acdf9c46b6551f9d7bb36d4586769301902.js?body=1" for ::1 at 2016-01-10 16:11:07 -0800
+
+
+Started GET "/assets/components/updatewineform.self-80d394a6cfdc46291bb3e70fbaa319912d6d979d1302cffde097c722e30c5637.js?body=1" for ::1 at 2016-01-10 16:11:07 -0800
+
+
+Started GET "/assets/components/wineshow.self-ea9267620ce121172a200943420e6466f763cafe10f2260b9a496840e4927411.js?body=1" for ::1 at 2016-01-10 16:11:07 -0800
+
+
+Started GET "/assets/components.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.js?body=1" for ::1 at 2016-01-10 16:11:07 -0800
+
+
+Started GET "/assets/actions/api_actions.self-f153769414c908144dc28c28f22bc5d62a53b6af2a549d3f92171d658b74251e.js?body=1" for ::1 at 2016-01-10 16:11:07 -0800
+
+
+Started GET "/assets/constants/wine_constants.self-c7a7ba6b958d8de6076464dff3eb4f268c08186383f310b493daf6853999ec6b.js?body=1" for ::1 at 2016-01-10 16:11:07 -0800
+
+
+Started GET "/assets/dispatcher/dispatcher.self-dcb9c6a400fd3e23de9956aaa56daf6dfa07ae0d567067d3455658871bdb8d82.js?body=1" for ::1 at 2016-01-10 16:11:07 -0800
+
+
+Started GET "/assets/static_pages.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-01-10 16:11:07 -0800
+
+
+Started GET "/assets/stores/wine.self-155741442996215562ea32cec3b3a749e868b3a77f4f04f47e5389a2f9a565e7.js?body=1" for ::1 at 2016-01-10 16:11:07 -0800
+
+
+Started GET "/assets/util/api_util.self-5e4cab4f61e48c6d29d13b7f0cec79155f5c1a6edae95d08876d903972c623d9.js?body=1" for ::1 at 2016-01-10 16:11:07 -0800
+
+
+Started GET "/assets/wine.self-13da601c16091a42e03cac12420ef4482d341927cc60cdb02f14aa2c32c1e7dd.js?body=1" for ::1 at 2016-01-10 16:11:07 -0800
+
+
+Started GET "/assets/wines.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-01-10 16:11:07 -0800
+
+
+Started GET "/assets/application.self-16c207b3ca1b52afcfc7f4b662487caf1bbe084a6656bb15f693ab9de2d11be7.js?body=1" for ::1 at 2016-01-10 16:11:07 -0800
+
+
+Started GET "/api/gifs/NaN" for ::1 at 2016-01-10 16:11:08 -0800
+
+ActionController::RoutingError (No route matches [GET] "/api/gifs/NaN"):
+  actionpack (4.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  newrelic_rpm (3.14.0.305) lib/new_relic/agent/instrumentation/middleware_tracing.rb:78:in `call'
+  web-console (2.2.1) lib/web_console/middleware.rb:39:in `call'
+  newrelic_rpm (3.14.0.305) lib/new_relic/agent/instrumentation/middleware_tracing.rb:78:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  newrelic_rpm (3.14.0.305) lib/new_relic/agent/instrumentation/middleware_tracing.rb:78:in `call'
+  railties (4.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.3) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.3) lib/rails/rack/logger.rb:20:in `call'
+  newrelic_rpm (3.14.0.305) lib/new_relic/agent/instrumentation/middleware_tracing.rb:78:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  newrelic_rpm (3.14.0.305) lib/new_relic/agent/instrumentation/middleware_tracing.rb:78:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  newrelic_rpm (3.14.0.305) lib/new_relic/agent/instrumentation/middleware_tracing.rb:78:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  newrelic_rpm (3.14.0.305) lib/new_relic/agent/instrumentation/middleware_tracing.rb:78:in `call'
+  activesupport (4.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  newrelic_rpm (3.14.0.305) lib/new_relic/agent/instrumentation/middleware_tracing.rb:78:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  newrelic_rpm (3.14.0.305) lib/new_relic/agent/instrumentation/middleware_tracing.rb:78:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/static.rb:116:in `call'
+  newrelic_rpm (3.14.0.305) lib/new_relic/agent/instrumentation/middleware_tracing.rb:78:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  newrelic_rpm (3.14.0.305) lib/new_relic/agent/instrumentation/middleware_tracing.rb:78:in `call'
+  railties (4.2.3) lib/rails/engine.rb:518:in `call'
+  railties (4.2.3) lib/rails/application.rb:165:in `call'
+  newrelic_rpm (3.14.0.305) lib/new_relic/agent/instrumentation/middleware_tracing.rb:78:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/Yoshi/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /Users/Yoshi/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /Users/Yoshi/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /Users/Yoshi/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.text.erb (1.3ms)
+  Rendered /Users/Yoshi/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/routing_error.text.erb (30.9ms)
+  Rendered /Users/Yoshi/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (1.0ms)
+  Rendered /Users/Yoshi/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.9ms)
+  Rendered /Users/Yoshi/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (1.0ms)
+  Rendered /Users/Yoshi/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.9ms)
+  Rendered /Users/Yoshi/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (94.8ms)
+  Rendered /Users/Yoshi/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.9ms)
+  Rendered /Users/Yoshi/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (1.0ms)
+  Rendered /Users/Yoshi/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (206.7ms)
+
+
+Started GET "/" for ::1 at 2016-01-10 16:11:20 -0800
+Processing by StaticPagesController#root as HTML
+  Rendered static_pages/root.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 79ms (Views: 78.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/gifs/NaN" for ::1 at 2016-01-10 16:11:22 -0800
+
+ActionController::RoutingError (No route matches [GET] "/api/gifs/NaN"):
+  actionpack (4.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  newrelic_rpm (3.14.0.305) lib/new_relic/agent/instrumentation/middleware_tracing.rb:78:in `call'
+  web-console (2.2.1) lib/web_console/middleware.rb:39:in `call'
+  newrelic_rpm (3.14.0.305) lib/new_relic/agent/instrumentation/middleware_tracing.rb:78:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  newrelic_rpm (3.14.0.305) lib/new_relic/agent/instrumentation/middleware_tracing.rb:78:in `call'
+  railties (4.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.3) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.3) lib/rails/rack/logger.rb:20:in `call'
+  newrelic_rpm (3.14.0.305) lib/new_relic/agent/instrumentation/middleware_tracing.rb:78:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  newrelic_rpm (3.14.0.305) lib/new_relic/agent/instrumentation/middleware_tracing.rb:78:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  newrelic_rpm (3.14.0.305) lib/new_relic/agent/instrumentation/middleware_tracing.rb:78:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  newrelic_rpm (3.14.0.305) lib/new_relic/agent/instrumentation/middleware_tracing.rb:78:in `call'
+  activesupport (4.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  newrelic_rpm (3.14.0.305) lib/new_relic/agent/instrumentation/middleware_tracing.rb:78:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  newrelic_rpm (3.14.0.305) lib/new_relic/agent/instrumentation/middleware_tracing.rb:78:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/static.rb:116:in `call'
+  newrelic_rpm (3.14.0.305) lib/new_relic/agent/instrumentation/middleware_tracing.rb:78:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  newrelic_rpm (3.14.0.305) lib/new_relic/agent/instrumentation/middleware_tracing.rb:78:in `call'
+  railties (4.2.3) lib/rails/engine.rb:518:in `call'
+  railties (4.2.3) lib/rails/application.rb:165:in `call'
+  newrelic_rpm (3.14.0.305) lib/new_relic/agent/instrumentation/middleware_tracing.rb:78:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/Yoshi/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /Users/Yoshi/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /Users/Yoshi/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /Users/Yoshi/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.text.erb (1.2ms)
+  Rendered /Users/Yoshi/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/routing_error.text.erb (29.3ms)
+  Rendered /Users/Yoshi/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (1.0ms)
+  Rendered /Users/Yoshi/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (1.0ms)
+  Rendered /Users/Yoshi/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.8ms)
+  Rendered /Users/Yoshi/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.9ms)
+  Rendered /Users/Yoshi/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (86.6ms)
+  Rendered /Users/Yoshi/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.8ms)
+  Rendered /Users/Yoshi/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (1.0ms)
+  Rendered /Users/Yoshi/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (189.9ms)
+
+
+Started GET "/" for ::1 at 2016-01-10 16:12:43 -0800
+Processing by StaticPagesController#root as HTML
+  Rendered static_pages/root.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 549ms (Views: 547.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/static_pages.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-01-10 16:12:45 -0800
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2016-01-10 16:12:46 -0800
+
+
+Started GET "/assets/wines.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-01-10 16:12:46 -0800
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2016-01-10 16:12:46 -0800
+
+
+Started GET "/assets/bootstrap.self-6c92f650931beefe48977f272b7015d6b9b45da8b09831ebf88e05193c12d355.js?body=1" for ::1 at 2016-01-10 16:12:46 -0800
+
+
+Started GET "/assets/development-with-addons/react.self-eb8c71fecbd80164b57078dcf4c66c91c12c9c84b59938c485aea8b6ae3538c1.js?body=1" for ::1 at 2016-01-10 16:12:46 -0800
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-01-10 16:12:46 -0800
+
+
+Started GET "/assets/react_ujs.self-73c2ae362693ee5da34cce3bf475fa9d0bad8d0e0ad0458f1d2823f116d9add7.js?body=1" for ::1 at 2016-01-10 16:12:46 -0800
+
+
+Started GET "/assets/ReactRouter.min.self-0c08710e85e99bdc2b63a49d032bf9a8ac55d74ebb3e4ab8829aa5352e735450.js?body=1" for ::1 at 2016-01-10 16:12:46 -0800
+
+
+Started GET "/assets/flux.self-c2206dc953bbad23c0ee331879560545a4ec58709c89fe78db57a156ec19c08f.js?body=1" for ::1 at 2016-01-10 16:12:46 -0800
+
+
+Started GET "/assets/components/addwineform.self-99fdf9e01d82ed6167a12e165884f4943c86d04e2c321a55795f2b54b8d3e6bf.js?body=1" for ::1 at 2016-01-10 16:12:46 -0800
+
+
+Started GET "/assets/eventemitter.self-b7e538902dfb3dce50e80598efaa7b435781b7bc8fe936a7aca64a6f2699d411.js?body=1" for ::1 at 2016-01-10 16:12:46 -0800
+
+
+Started GET "/assets/components/index.self-0e627d99b6d77b52b0e0f4d3d01e8acdf9c46b6551f9d7bb36d4586769301902.js?body=1" for ::1 at 2016-01-10 16:12:46 -0800
+
+
+Started GET "/assets/components/updatewineform.self-80d394a6cfdc46291bb3e70fbaa319912d6d979d1302cffde097c722e30c5637.js?body=1" for ::1 at 2016-01-10 16:12:46 -0800
+
+
+Started GET "/assets/components/wineshow.self-ea9267620ce121172a200943420e6466f763cafe10f2260b9a496840e4927411.js?body=1" for ::1 at 2016-01-10 16:12:46 -0800
+
+
+Started GET "/assets/components.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.js?body=1" for ::1 at 2016-01-10 16:12:46 -0800
+
+
+Started GET "/assets/actions/api_actions.self-f153769414c908144dc28c28f22bc5d62a53b6af2a549d3f92171d658b74251e.js?body=1" for ::1 at 2016-01-10 16:12:46 -0800
+
+
+Started GET "/assets/constants/wine_constants.self-c7a7ba6b958d8de6076464dff3eb4f268c08186383f310b493daf6853999ec6b.js?body=1" for ::1 at 2016-01-10 16:12:46 -0800
+
+
+Started GET "/assets/dispatcher/dispatcher.self-dcb9c6a400fd3e23de9956aaa56daf6dfa07ae0d567067d3455658871bdb8d82.js?body=1" for ::1 at 2016-01-10 16:12:46 -0800
+
+
+Started GET "/assets/static_pages.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-01-10 16:12:46 -0800
+
+
+Started GET "/assets/stores/wine.self-a660fd913edc633573976971c53326509bf4c265240364e014eafcec0e5d4f86.js?body=1" for ::1 at 2016-01-10 16:12:46 -0800
+
+
+Started GET "/assets/util/api_util.self-5e4cab4f61e48c6d29d13b7f0cec79155f5c1a6edae95d08876d903972c623d9.js?body=1" for ::1 at 2016-01-10 16:12:46 -0800
+
+
+Started GET "/assets/wine.self-13da601c16091a42e03cac12420ef4482d341927cc60cdb02f14aa2c32c1e7dd.js?body=1" for ::1 at 2016-01-10 16:12:46 -0800
+
+
+Started GET "/assets/wines.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-01-10 16:12:46 -0800
+
+
+Started GET "/assets/application.self-16c207b3ca1b52afcfc7f4b662487caf1bbe084a6656bb15f693ab9de2d11be7.js?body=1" for ::1 at 2016-01-10 16:12:46 -0800
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2016-01-10 16:12:46 -0800
+
+
+Started GET "/api/wines" for ::1 at 2016-01-10 16:12:47 -0800
+Processing by Api::WinesController#index as JSON
+  [1m[35mWine Load (2.1ms)[0m  SELECT "wines".* FROM "wines"
+  Rendered api/wines/index.json.jbuilder (72.4ms)
+Completed 200 OK in 82ms (Views: 78.4ms | ActiveRecord: 2.1ms)
+
+
+Started POST "/api/wines" for ::1 at 2016-01-10 16:12:59 -0800
+Processing by Api::WinesController#create as JSON
+  Parameters: {"wine"=>{"wine_id"=>"1", "wine_name"=>"gjdaklg", "wine_description"=>"kljglkjdlkg", "wine_geolocation"=>"daf", "wine_url"=>"daf"}}
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "wines" ("wine_id", "wine_name", "wine_description", "wine_geolocation", "wine_url", "wine_price_min", "wine_price_max", "wine_price_retail", "wine_type", "wine_year", "wine_appellation", "wine_varietal", "wine_vineyard", "wine_label", "wine_rating", "wine_retail", "wine_vintage", "wine_community", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17, $18, $19, $20) RETURNING "id"  [["wine_id", 1], ["wine_name", "gjdaklg"], ["wine_description", "kljglkjdlkg"], ["wine_geolocation", "daf"], ["wine_url", "daf"], ["wine_price_min", ""], ["wine_price_max", ""], ["wine_price_retail", ""], ["wine_type", ""], ["wine_year", ""], ["wine_appellation", ""], ["wine_varietal", ""], ["wine_vineyard", ""], ["wine_label", ""], ["wine_rating", ""], ["wine_retail", ""], ["wine_vintage", ""], ["wine_community", ""], ["created_at", "2016-01-11 00:12:59.059119"], ["updated_at", "2016-01-11 00:12:59.059119"]]
+  [1m[36m (7.8ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  Rendered api/wines/show.json.jbuilder (0.6ms)
+Completed 200 OK in 25ms (Views: 5.6ms | ActiveRecord: 10.0ms)
+
+
+Started GET "/api/gifs/NaN" for ::1 at 2016-01-10 16:15:09 -0800
+
+ActionController::RoutingError (No route matches [GET] "/api/gifs/NaN"):
+  actionpack (4.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  newrelic_rpm (3.14.0.305) lib/new_relic/agent/instrumentation/middleware_tracing.rb:78:in `call'
+  web-console (2.2.1) lib/web_console/middleware.rb:39:in `call'
+  newrelic_rpm (3.14.0.305) lib/new_relic/agent/instrumentation/middleware_tracing.rb:78:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  newrelic_rpm (3.14.0.305) lib/new_relic/agent/instrumentation/middleware_tracing.rb:78:in `call'
+  railties (4.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.3) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.3) lib/rails/rack/logger.rb:20:in `call'
+  newrelic_rpm (3.14.0.305) lib/new_relic/agent/instrumentation/middleware_tracing.rb:78:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  newrelic_rpm (3.14.0.305) lib/new_relic/agent/instrumentation/middleware_tracing.rb:78:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  newrelic_rpm (3.14.0.305) lib/new_relic/agent/instrumentation/middleware_tracing.rb:78:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  newrelic_rpm (3.14.0.305) lib/new_relic/agent/instrumentation/middleware_tracing.rb:78:in `call'
+  activesupport (4.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  newrelic_rpm (3.14.0.305) lib/new_relic/agent/instrumentation/middleware_tracing.rb:78:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  newrelic_rpm (3.14.0.305) lib/new_relic/agent/instrumentation/middleware_tracing.rb:78:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/static.rb:116:in `call'
+  newrelic_rpm (3.14.0.305) lib/new_relic/agent/instrumentation/middleware_tracing.rb:78:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  newrelic_rpm (3.14.0.305) lib/new_relic/agent/instrumentation/middleware_tracing.rb:78:in `call'
+  railties (4.2.3) lib/rails/engine.rb:518:in `call'
+  railties (4.2.3) lib/rails/application.rb:165:in `call'
+  newrelic_rpm (3.14.0.305) lib/new_relic/agent/instrumentation/middleware_tracing.rb:78:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/Yoshi/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /Users/Yoshi/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /Users/Yoshi/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /Users/Yoshi/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.text.erb (1.4ms)
+  Rendered /Users/Yoshi/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/routing_error.text.erb (31.5ms)
+  Rendered /Users/Yoshi/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (1.0ms)
+  Rendered /Users/Yoshi/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.7ms)
+  Rendered /Users/Yoshi/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.7ms)
+  Rendered /Users/Yoshi/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.9ms)
+  Rendered /Users/Yoshi/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (75.8ms)
+  Rendered /Users/Yoshi/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.9ms)
+  Rendered /Users/Yoshi/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (1.1ms)
+  Rendered /Users/Yoshi/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (172.7ms)
+
+
+Started GET "/" for ::1 at 2016-01-10 16:15:21 -0800
+Processing by StaticPagesController#root as HTML
+  Rendered static_pages/root.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 405ms (Views: 403.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/stores/wine.self-6324c4dfba09ddefbc58d4dd4554f7f2405623070274a4a316163f47b9560261.js?body=1" for ::1 at 2016-01-10 16:15:23 -0800
+
+
+Started GET "/api/wines" for ::1 at 2016-01-10 16:15:23 -0800
+Processing by Api::WinesController#index as JSON
+  [1m[35mWine Load (1.5ms)[0m  SELECT "wines".* FROM "wines"
+  Rendered api/wines/index.json.jbuilder (72.6ms)
+Completed 200 OK in 81ms (Views: 79.2ms | ActiveRecord: 1.5ms)
+
+
+Started POST "/api/wines" for ::1 at 2016-01-10 16:15:34 -0800
+Processing by Api::WinesController#create as JSON
+  Parameters: {"wine"=>{"wine_id"=>"2", "wine_name"=>"5i1io5u13iojdfa", "wine_description"=>"fjdkaljadslkgj", "wine_geolocation"=>"jkljadskljskladjgkl", "wine_url"=>"jkljadskljskladjgkl"}}
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.9ms)[0m  INSERT INTO "wines" ("wine_id", "wine_name", "wine_description", "wine_geolocation", "wine_url", "wine_price_min", "wine_price_max", "wine_price_retail", "wine_type", "wine_year", "wine_appellation", "wine_varietal", "wine_vineyard", "wine_label", "wine_rating", "wine_retail", "wine_vintage", "wine_community", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17, $18, $19, $20) RETURNING "id"  [["wine_id", 2], ["wine_name", "5i1io5u13iojdfa"], ["wine_description", "fjdkaljadslkgj"], ["wine_geolocation", "jkljadskljskladjgkl"], ["wine_url", "jkljadskljskladjgkl"], ["wine_price_min", ""], ["wine_price_max", ""], ["wine_price_retail", ""], ["wine_type", ""], ["wine_year", ""], ["wine_appellation", ""], ["wine_varietal", ""], ["wine_vineyard", ""], ["wine_label", ""], ["wine_rating", ""], ["wine_retail", ""], ["wine_vintage", ""], ["wine_community", ""], ["created_at", "2016-01-11 00:15:34.533105"], ["updated_at", "2016-01-11 00:15:34.533105"]]
+  [1m[36m (8.0ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  Rendered api/wines/show.json.jbuilder (1.1ms)
+Completed 200 OK in 30ms (Views: 10.5ms | ActiveRecord: 10.7ms)
+
+
+Started GET "/api/gifs/NaN" for ::1 at 2016-01-10 16:16:11 -0800
+
+ActionController::RoutingError (No route matches [GET] "/api/gifs/NaN"):
+  actionpack (4.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  newrelic_rpm (3.14.0.305) lib/new_relic/agent/instrumentation/middleware_tracing.rb:78:in `call'
+  web-console (2.2.1) lib/web_console/middleware.rb:39:in `call'
+  newrelic_rpm (3.14.0.305) lib/new_relic/agent/instrumentation/middleware_tracing.rb:78:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  newrelic_rpm (3.14.0.305) lib/new_relic/agent/instrumentation/middleware_tracing.rb:78:in `call'
+  railties (4.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.3) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.3) lib/rails/rack/logger.rb:20:in `call'
+  newrelic_rpm (3.14.0.305) lib/new_relic/agent/instrumentation/middleware_tracing.rb:78:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  newrelic_rpm (3.14.0.305) lib/new_relic/agent/instrumentation/middleware_tracing.rb:78:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  newrelic_rpm (3.14.0.305) lib/new_relic/agent/instrumentation/middleware_tracing.rb:78:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  newrelic_rpm (3.14.0.305) lib/new_relic/agent/instrumentation/middleware_tracing.rb:78:in `call'
+  activesupport (4.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  newrelic_rpm (3.14.0.305) lib/new_relic/agent/instrumentation/middleware_tracing.rb:78:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  newrelic_rpm (3.14.0.305) lib/new_relic/agent/instrumentation/middleware_tracing.rb:78:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/static.rb:116:in `call'
+  newrelic_rpm (3.14.0.305) lib/new_relic/agent/instrumentation/middleware_tracing.rb:78:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  newrelic_rpm (3.14.0.305) lib/new_relic/agent/instrumentation/middleware_tracing.rb:78:in `call'
+  railties (4.2.3) lib/rails/engine.rb:518:in `call'
+  railties (4.2.3) lib/rails/application.rb:165:in `call'
+  newrelic_rpm (3.14.0.305) lib/new_relic/agent/instrumentation/middleware_tracing.rb:78:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/Yoshi/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /Users/Yoshi/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /Users/Yoshi/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /Users/Yoshi/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.text.erb (1.1ms)
+  Rendered /Users/Yoshi/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/routing_error.text.erb (26.6ms)
+  Rendered /Users/Yoshi/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.7ms)
+  Rendered /Users/Yoshi/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (1.1ms)
+  Rendered /Users/Yoshi/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.7ms)
+  Rendered /Users/Yoshi/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/Yoshi/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (68.3ms)
+  Rendered /Users/Yoshi/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/Yoshi/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.8ms)
+  Rendered /Users/Yoshi/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (145.8ms)

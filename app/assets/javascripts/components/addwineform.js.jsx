@@ -24,6 +24,7 @@ var AddWineForm = React.createClass({
   },
   _addWine: function(event){
     event.preventDefault();
+    debugger;
     var data = {
       wine_id: parseInt(this.state.id),
       wine_name: this.state.name,

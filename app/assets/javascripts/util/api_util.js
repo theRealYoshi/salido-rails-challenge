@@ -15,7 +15,7 @@ ApiUtil = {
       data: { wine: data },
       success: function (wine) {
         ApiActions.receiveSingleWine(wine);
-        callback(wine.id);
+        callback(wine.wine_id);
       },
       error: function () {
         console.log("Something went wrong");

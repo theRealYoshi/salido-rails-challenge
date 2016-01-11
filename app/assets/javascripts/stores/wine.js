@@ -10,7 +10,7 @@
   var addWine = function(wine){
     var idx;
     for (var i = 0; i < _wines.length; i++) {
-     if (_wines[i].id === wine.id) {
+     if (_wines[i].wine_id === wine.wine_id) {
        idx = i;
      }
     }
@@ -62,6 +62,7 @@
           break;
         case WineConstants.WINE_RECEIVED:
           var singleResult = addWine(payload.wine);
+          console.log(payload.wine);
           WineStore.emit(SINGLE_CHANGE_EVENT);
           break;
         case WineConstants.WINE_REMOVED:
