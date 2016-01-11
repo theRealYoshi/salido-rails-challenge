@@ -24,13 +24,12 @@ var AddWineForm = React.createClass({
   },
   _addWine: function(event){
     event.preventDefault();
-    debugger;
     var data = {
       wine_id: parseInt(this.state.id),
       wine_name: this.state.name,
       wine_description: this.state.description,
       wine_geolocation: this.state.region,
-      wine_url: this.state.region,
+      wine_url: this.state.url,
       wine_price_min: this.state.price_min,
       wine_price_max: this.state.price_max,
       wine_price_retail: this.state.price_retail,
@@ -186,6 +185,7 @@ var AddWineForm = React.createClass({
                    Add Wine
            </button>
          </form>
+         <a href="/">back</a>
       </div>
     );
   }

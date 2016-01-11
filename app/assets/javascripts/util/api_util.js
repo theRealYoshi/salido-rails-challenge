@@ -22,12 +22,24 @@ ApiUtil = {
       }
     });
   },
-  fetchSingleGif: function(id){
+  fetchSingleWine: function(id){
     $.ajax({
-        url: '/api/gifs/' + id,
+        url: '/api/wines/' + id,
         type: 'GET',
-        success: function(gif){
-          ApiActions.receiveSingleGif(gif);
+        success: function(wine){
+          ApiActions.receiveSingleWine(wine);
+        }
+    });
+  },
+  updateWine: function(data, id, callback){
+    $.ajax({
+        url: '/api/wines/' + id,
+        type: 'PATCH',
+        data: { wine: data },
+        success: function(wine){
+          console.log(wine);
+          ApiActions.receiveSingleWine(wine);
+          callback(wine.wine_id);
         }
     });
   },

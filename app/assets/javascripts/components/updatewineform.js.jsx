@@ -1,189 +1,210 @@
 var UpdateWineForm = React.createClass({
   mixins: [React.addons.LinkedStateMixin,ReactRouter.History],
-  getInitialState: function(){
-    return {
-      wine_id: "",
-      wine_name: "",
-      wine_description: "",
-      wine_geolocation: "",
-      wine_url: "",
-      wine_price_min: "",
-      wine_price_max: "",
-      wine_price_retail: "",
-      wine_type: "",
-      wine_year: "",
-      wine_appellation: "",
-      wine_varietal: "",
-      wine_vineyard: "",
-      wine_label: "",
-      wine_rating: "",
-      wine_retail: "",
-      wine_vintage: "",
-      wine_community: ""
-    }
+  getStateFromStore: function () {
+    return { wine: WineStore.find(parseInt(this.props.params.wineId)) };
   },
-  _addWine: function(event){
+  getInitialState: function(){
+    return this.getStateFromStore();
+  },
+  _onChange: function(){
+    this.setState(this.getStateFromStore());
+  },
+  componentWillMount: function(){
+    this.getStateFromStore();
+    WineStore.addSingleChangeListener(this._onChange);
+  },
+  componentWillUnmount: function(){
+    WineStore.removeChangeListener(this._onChange);
+    WineStore.removeSingleChangeListener(this._onChange);
+  },
+  _onUpdate: function(id, event){
     event.preventDefault();
+    this.state.wine[id] = event.currentTarget.value;
+    this.setState({wine: this.state.wine});
+  },
+  _updateWine: function(event){
+    event.preventDefault();
+    var wine = this.state.wine;
     var data = {
-      wine_id: parseInt(this.state.id),
-      wine_name: this.state.name,
-      wine_description: this.state.description,
-      wine_geolocation: this.state.region,
-      wine_url: this.state.region,
-      wine_price_min: this.state.price_min,
-      wine_price_max: this.state.price_max,
-      wine_price_retail: this.state.price_retail,
-      wine_type: this.state.type,
-      wine_year: this.state.year,
-      wine_appellation: this.state.appellation,
-      wine_varietal: this.state.varietal,
-      wine_vineyard: this.state.vineyard,
-      wine_label: this.state.label,
-      wine_rating: this.state.rating,
-      wine_retail: this.state.retail,
-      wine_vintage: this.state.vintage,
-      wine_community: this.state.community
+      wine_id: parseInt(wine.wine_id),
+      wine_name: wine.wine_name,
+      wine_description: wine.wine_description,
+      wine_geolocation: wine.wine_geolocation,
+      wine_url: wine.wine_url,
+      wine_price_min: wine.wine_price_min,
+      wine_price_max: wine.wine_price_max,
+      wine_price_retail: wine.wine_price_retail,
+      wine_type: wine.wine_type,
+      wine_year: wine.wine_year,
+      wine_appellation: wine.wine_appellation,
+      wine_varietal: wine.wine_varietal,
+      wine_vineyard: wine.wine_vineyard,
+      wine_label: wine.wine_label,
+      wine_rating: wine.wine_rating,
+      wine_retail: wine.wine_retail,
+      wine_vintage: wine.wine_vintage,
+      wine_community: wine.wine_community
     }
-    ApiUtil.createWine(data, function(id){
+    ApiUtil.updateWine(data, wine.wine_id, function(id){
       this.history.pushState(null, 'wines/' + id, {});
     }.bind(this));
   },
   render: function(){
+    var wine = this.state.wine;
     return (
       <div class="row">
-        <h3>Add Some Wine</h3>
-         <form className="upload-form" onSubmit={this._addWine}>
+        <h3>Update This Wine Product</h3>
+         <form className="upload-form" onSubmit={this._updateWine}>
            <div className="form-group">
              <label>Id</label>
              <input type="text"
                     className="form-control"
                     placeholder="Id must be a number"
-                    valueLink={this.linkState('id')}/>
+                    onChange={this._onUpdate.bind(null, "wine_id")}
+                    value={wine.wine_id}/>
            </div>
            <div className="form-group">
              <label>Name</label>
              <input type="text"
                     className="form-control"
                     placeholder="Name"
-                    valueLink={this.linkState('name')}/>
+                    onChange={this._onUpdate.bind(null, "wine_name")}
+                    value={wine.wine_name}/>
            </div>
            <div className="form-group">
              <label>Description</label>
              <input type="text"
                     className="form-control"
                     placeholder="Description"
-                    valueLink={this.linkState('description')}/>
+                    onChange={this._onUpdate.bind(null, "wine_description")}
+                    value={wine.wine_description}/>
            </div>
            <div className="form-group">
              <label>Region</label>
              <input type="text"
                     className="form-control"
                     placeholder="Region"
-                    valueLink={this.linkState('region')}/>
+                    onChange={this._onUpdate.bind(null, "wine_geolocation")}
+                    value={wine.wine_geolocation}/>
            </div>
            <div className="form-group">
              <label>Url</label>
              <input type="text"
                     className="form-control"
                     placeholder="Url"
-                    valueLink={this.linkState('url')}/>
+                    onChange={this._onUpdate.bind(null, "wine_url")}
+                    value={wine.wine_url}/>
            </div>
            <div className="form-group">
              <label>Minimum Price</label>
              <input type="text"
                     className="form-control"
                     placeholder="Minimum Price"
-                    valueLink={this.linkState('price_min')}/>
+                    onChange={this._onUpdate.bind(null, "wine_price_min")}
+                    value={wine.wine_price_min}/>
            </div>
            <div className="form-group">
              <label>Maxium Price</label>
              <input type="text"
                     className="form-control"
                     placeholder="Maximum Price"
-                    valueLink={this.linkState('price_max')}/>
+                    onChange={this._onUpdate.bind(null, "wine_price_max")}
+                    value={wine.wine_price_max}/>
            </div>
            <div className="form-group">
              <label>Retail Price</label>
              <input type="text"
                     className="form-control"
                     placeholder="Retail Price"
-                    valueLink={this.linkState('price_retail')}/>
+                    onChange={this._onUpdate.bind(null, "wine_price_retail")}
+                    value={wine.wine_price_retail}/>
            </div>
            <div className="form-group">
              <label>Type</label>
              <input type="text"
                     className="form-control"
                     placeholder="Ex. Red or White"
-                    valueLink={this.linkState('type')}/>
+                    onChange={this._onUpdate.bind(null, "wine_type")}
+                    value={wine.wine_type}/>
            </div>
            <div className="form-group">
              <label>Year</label>
              <input type="text"
                     className="form-control"
                     placeholder="Year"
-                    valueLink={this.linkState('year')}/>
+                    onChange={this._onUpdate.bind(null, "wine_year")}
+                    value={wine.wine_year}/>
            </div>
            <div className="form-group">
              <label>Appellation</label>
              <input type="text"
                     className="form-control"
                     placeholder="Appellation"
-                    valueLink={this.linkState('appellation')}/>
+                    onChange={this._onUpdate.bind(null, "wine_appellation")}
+                    value={wine.wine_appellation}/>
            </div>
            <div className="form-group">
              <label>Varietal</label>
              <input type="text"
                     className="form-control"
                     placeholder="Varietal"
-                    valueLink={this.linkState('varietal')}/>
+                    onChange={this._onUpdate.bind(null, "wine_varietal")}
+                    value={wine.wine_varietal}/>
            </div>
            <div className="form-group">
              <label>Vineyard</label>
              <input type="text"
                     className="form-control"
                     placeholder="Vineyard"
-                    valueLink={this.linkState('vineyard')}/>
+                    onChange={this._onUpdate.bind(null, "wine_vineyard")}
+                    value={wine.wine_vineyard}/>
            </div>
            <div className="form-group">
              <label>Label</label>
              <input type="text"
                     className="form-control"
                     placeholder="Label"
-                    valueLink={this.linkState('label')}/>
+                    onChange={this._onUpdate.bind(null, "wine_label")}
+                    value={wine.wine_label}/>
            </div>
            <div className="form-group">
              <label>Rating</label>
              <input type="text"
                     className="form-control"
                     placeholder="Rating"
-                    valueLink={this.linkState('rating')}/>
+                    onChange={this._onUpdate.bind(null, "wine_rating")}
+                    value={wine.wine_rating}/>
            </div>
            <div className="form-group">
              <label>Retail</label>
              <input type="text"
                     className="form-control"
                     placeholder="Retail"
-                    valueLink={this.linkState('retail')}/>
+                    onChange={this._onUpdate.bind(null, "wine_retail")}
+                    value={wine.wine_retail}/>
            </div>
            <div className="form-group">
              <label>Vintage</label>
              <input type="text"
                     className="form-control"
                     placeholder="Vintage"
-                    valueLink={this.linkState('vintage')}/>
+                    onChange={this._onUpdate.bind(null, "wine_vintage")}
+                    value={wine.wine_vintage}/>
            </div>
            <div className="form-group">
              <label>Community</label>
              <input type="text"
                     className="form-control"
                     placeholder="Community"
-                    valueLink={this.linkState('community')}/>
+                    onChange={this._onUpdate.bind(null, "wine_community")}
+                    value={wine.wine_community}/>
            </div>
            <br />
            <button type="submit"
                    className="btn btn-default btn-lg">
-                   Add Wine
+                   Update Wine
            </button>
+           <a href="/">back</a>
          </form>
       </div>
     );

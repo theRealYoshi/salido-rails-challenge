@@ -339,3 +339,67 @@
 [2016-01-10 16:05:33 -0800 Yoshihiro-Luks-MacBook.local (79060)] INFO : Installing Rails 4 view instrumentation
 [2016-01-10 16:05:33 -0800 Yoshihiro-Luks-MacBook.local (79060)] INFO : Installing Rails 4 Error instrumentation
 [2016-01-10 16:05:33 -0800 Yoshihiro-Luks-MacBook.local (79060)] INFO : Finished instrumentation
+[2016-01-10 16:51:11 -0800 Yoshihiro-Luks-MacBook.local (77715)] INFO : Starting Agent shutdown
+[2016-01-11 14:07:19 -0800 Yoshihiro-Luks-MacBook.local (64653)] INFO : Starting the New Relic agent in "development" environment.
+[2016-01-11 14:07:19 -0800 Yoshihiro-Luks-MacBook.local (64653)] INFO : To prevent agent startup add a NEWRELIC_AGENT_ENABLED=false environment variable or modify the "development" section of your newrelic.yml.
+[2016-01-11 14:07:19 -0800 Yoshihiro-Luks-MacBook.local (64653)] WARN : No configuration file found. Working directory = /Users/Yoshi/Desktop/Dev/App Academy/projects/salido-rails-challenge
+[2016-01-11 14:07:19 -0800 Yoshihiro-Luks-MacBook.local (64653)] WARN : Looked in these locations (based on defaults): /Users/Yoshi/Desktop/Dev/App Academy/projects/salido-rails-challenge/config/newrelic.yml, /Users/Yoshi/Desktop/Dev/App Academy/projects/salido-rails-challenge/newrelic.yml, /Users/Yoshi/Desktop/Dev/App Academy/projects/salido-rails-challenge/config/newrelic.yml, /Users/Yoshi/Desktop/Dev/App Academy/projects/salido-rails-challenge/newrelic.yml, /Users/Yoshi/.newrelic/newrelic.yml, /Users/Yoshi/newrelic.yml
+[2016-01-11 14:07:19 -0800 Yoshihiro-Luks-MacBook.local (64653)] INFO : Environment: development
+[2016-01-11 14:07:19 -0800 Yoshihiro-Luks-MacBook.local (64653)] INFO : Dispatcher: webrick
+[2016-01-11 14:07:19 -0800 Yoshihiro-Luks-MacBook.local (64653)] INFO : Application: development
+[2016-01-11 14:07:19 -0800 Yoshihiro-Luks-MacBook.local (64653)] WARN : No license key found. This often means your newrelic.yml file was not found, or it lacks a section for the running environment, 'development'. You may also want to try linting your newrelic.yml to ensure it is valid YML.
+[2016-01-11 14:07:19 -0800 Yoshihiro-Luks-MacBook.local (64653)] INFO : Installing ActiveJob instrumentation
+[2016-01-11 14:07:19 -0800 Yoshihiro-Luks-MacBook.local (64653)] INFO : Installing ActiveRecord 4 instrumentation
+[2016-01-11 14:07:20 -0800 Yoshihiro-Luks-MacBook.local (64653)] INFO : Installing Net instrumentation
+[2016-01-11 14:07:20 -0800 Yoshihiro-Luks-MacBook.local (64653)] INFO : Installing deferred Rack instrumentation
+[2016-01-11 14:07:20 -0800 Yoshihiro-Luks-MacBook.local (64653)] INFO : Installing Rack::Builder middleware instrumentation
+[2016-01-11 14:07:20 -0800 Yoshihiro-Luks-MacBook.local (64653)] INFO : Installing Rails 3+ middleware instrumentation
+[2016-01-11 14:07:20 -0800 Yoshihiro-Luks-MacBook.local (64653)] INFO : Installing Rails 4 Controller instrumentation
+[2016-01-11 14:07:20 -0800 Yoshihiro-Luks-MacBook.local (64653)] INFO : Installing Rails 4 view instrumentation
+[2016-01-11 14:07:20 -0800 Yoshihiro-Luks-MacBook.local (64653)] INFO : Installing Rails 4 Error instrumentation
+[2016-01-11 14:07:20 -0800 Yoshihiro-Luks-MacBook.local (64653)] INFO : Finished instrumentation
+[2016-01-11 14:07:21 -0800 Yoshihiro-Luks-MacBook.local (64653)] INFO : Doing deferred dependency-detection before Rack startup
+[2016-01-11 14:07:28 -0800 Yoshihiro-Luks-MacBook.local (64653)] ERROR : Invalid license key, please contact support@newrelic.com
+[2016-01-11 14:07:28 -0800 Yoshihiro-Luks-MacBook.local (64653)] ERROR : Visit NewRelic.com to obtain a valid license key, or to upgrade your account.
+[2016-01-11 14:42:32 -0800 Yoshihiro-Luks-MacBook.local (76670)] INFO : Starting the New Relic agent in "development" environment.
+[2016-01-11 14:42:32 -0800 Yoshihiro-Luks-MacBook.local (76670)] INFO : To prevent agent startup add a NEWRELIC_AGENT_ENABLED=false environment variable or modify the "development" section of your newrelic.yml.
+[2016-01-11 14:42:32 -0800 Yoshihiro-Luks-MacBook.local (76670)] WARN : No configuration file found. Working directory = /Users/Yoshi/Desktop/Dev/App Academy/projects/salido-rails-challenge
+[2016-01-11 14:42:32 -0800 Yoshihiro-Luks-MacBook.local (76670)] WARN : Looked in these locations (based on defaults): /Users/Yoshi/Desktop/Dev/App Academy/projects/salido-rails-challenge/config/newrelic.yml, /Users/Yoshi/Desktop/Dev/App Academy/projects/salido-rails-challenge/newrelic.yml, /Users/Yoshi/Desktop/Dev/App Academy/projects/salido-rails-challenge/config/newrelic.yml, /Users/Yoshi/Desktop/Dev/App Academy/projects/salido-rails-challenge/newrelic.yml, /Users/Yoshi/.newrelic/newrelic.yml, /Users/Yoshi/newrelic.yml
+[2016-01-11 14:42:32 -0800 Yoshihiro-Luks-MacBook.local (76670)] INFO : Environment: development
+[2016-01-11 14:42:32 -0800 Yoshihiro-Luks-MacBook.local (76670)] INFO : No known dispatcher detected.
+[2016-01-11 14:42:32 -0800 Yoshihiro-Luks-MacBook.local (76670)] INFO : Application: development
+[2016-01-11 14:42:32 -0800 Yoshihiro-Luks-MacBook.local (76670)] WARN : No license key found. This often means your newrelic.yml file was not found, or it lacks a section for the running environment, 'development'. You may also want to try linting your newrelic.yml to ensure it is valid YML.
+[2016-01-11 14:42:32 -0800 Yoshihiro-Luks-MacBook.local (76670)] INFO : Installing ActiveJob instrumentation
+[2016-01-11 14:42:32 -0800 Yoshihiro-Luks-MacBook.local (76670)] INFO : Installing ActiveRecord 4 instrumentation
+[2016-01-11 14:42:33 -0800 Yoshihiro-Luks-MacBook.local (76670)] INFO : Installing Net instrumentation
+[2016-01-11 14:42:33 -0800 Yoshihiro-Luks-MacBook.local (76670)] INFO : Installing deferred Rack instrumentation
+[2016-01-11 14:42:33 -0800 Yoshihiro-Luks-MacBook.local (76670)] INFO : Installing Rack::Builder middleware instrumentation
+[2016-01-11 14:42:33 -0800 Yoshihiro-Luks-MacBook.local (76670)] INFO : Installing Rails 3+ middleware instrumentation
+[2016-01-11 14:42:33 -0800 Yoshihiro-Luks-MacBook.local (76670)] INFO : Installing Rails 4 Controller instrumentation
+[2016-01-11 14:42:33 -0800 Yoshihiro-Luks-MacBook.local (76670)] INFO : Installing Rails 4 view instrumentation
+[2016-01-11 14:42:33 -0800 Yoshihiro-Luks-MacBook.local (76670)] INFO : Installing Rails 4 Error instrumentation
+[2016-01-11 14:42:33 -0800 Yoshihiro-Luks-MacBook.local (76670)] INFO : Finished instrumentation
+[2016-01-11 14:48:23 -0800 Yoshihiro-Luks-MacBook.local (78811)] INFO : Starting the New Relic agent in "development" environment.
+[2016-01-11 14:48:23 -0800 Yoshihiro-Luks-MacBook.local (78811)] INFO : To prevent agent startup add a NEWRELIC_AGENT_ENABLED=false environment variable or modify the "development" section of your newrelic.yml.
+[2016-01-11 14:48:23 -0800 Yoshihiro-Luks-MacBook.local (78811)] WARN : No configuration file found. Working directory = /Users/Yoshi/Desktop/Dev/App Academy/projects/salido-rails-challenge
+[2016-01-11 14:48:23 -0800 Yoshihiro-Luks-MacBook.local (78811)] WARN : Looked in these locations (based on defaults): /Users/Yoshi/Desktop/Dev/App Academy/projects/salido-rails-challenge/config/newrelic.yml, /Users/Yoshi/Desktop/Dev/App Academy/projects/salido-rails-challenge/newrelic.yml, /Users/Yoshi/Desktop/Dev/App Academy/projects/salido-rails-challenge/config/newrelic.yml, /Users/Yoshi/Desktop/Dev/App Academy/projects/salido-rails-challenge/newrelic.yml, /Users/Yoshi/.newrelic/newrelic.yml, /Users/Yoshi/newrelic.yml
+[2016-01-11 14:48:23 -0800 Yoshihiro-Luks-MacBook.local (78811)] INFO : Environment: development
+[2016-01-11 14:48:23 -0800 Yoshihiro-Luks-MacBook.local (78811)] INFO : No known dispatcher detected.
+[2016-01-11 14:48:23 -0800 Yoshihiro-Luks-MacBook.local (78811)] INFO : Application: development
+[2016-01-11 14:48:23 -0800 Yoshihiro-Luks-MacBook.local (78811)] WARN : No license key found. This often means your newrelic.yml file was not found, or it lacks a section for the running environment, 'development'. You may also want to try linting your newrelic.yml to ensure it is valid YML.
+[2016-01-11 14:48:23 -0800 Yoshihiro-Luks-MacBook.local (78811)] INFO : Installing ActiveJob instrumentation
+[2016-01-11 14:48:23 -0800 Yoshihiro-Luks-MacBook.local (78811)] INFO : Installing ActiveRecord 4 instrumentation
+[2016-01-11 14:48:23 -0800 Yoshihiro-Luks-MacBook.local (78811)] INFO : Installing Net instrumentation
+[2016-01-11 14:48:23 -0800 Yoshihiro-Luks-MacBook.local (78811)] INFO : Installing deferred Rack instrumentation
+[2016-01-11 14:48:23 -0800 Yoshihiro-Luks-MacBook.local (78811)] INFO : Installing Rack::Builder middleware instrumentation
+[2016-01-11 14:48:23 -0800 Yoshihiro-Luks-MacBook.local (78811)] INFO : Installing Rails 3+ middleware instrumentation
+[2016-01-11 14:48:23 -0800 Yoshihiro-Luks-MacBook.local (78811)] INFO : Installing Rails 4 Controller instrumentation
+[2016-01-11 14:48:23 -0800 Yoshihiro-Luks-MacBook.local (78811)] INFO : Installing Rails 4 view instrumentation
+[2016-01-11 14:48:23 -0800 Yoshihiro-Luks-MacBook.local (78811)] INFO : Installing Rails 4 Error instrumentation
+[2016-01-11 14:48:23 -0800 Yoshihiro-Luks-MacBook.local (78811)] INFO : Finished instrumentation
+[2016-01-11 14:54:25 -0800 Yoshihiro-Luks-MacBook.local (64653)] WARN : The error reporting queue has reached 20. The error detail for this and subsequent errors will not be transmitted to New Relic until the queued errors have been sent: wrong number of arguments (1 for 2)
+[2016-01-11 15:02:03 -0800 Yoshihiro-Luks-MacBook.local (64653)] WARN : The error reporting queue has reached 20. The error detail for this and subsequent errors will not be transmitted to New Relic until the queued errors have been sent: undefined method `wine_id' for nil:NilClass
+[2016-01-11 15:02:54 -0800 Yoshihiro-Luks-MacBook.local (64653)] WARN : The error reporting queue has reached 20. The error detail for this and subsequent errors will not be transmitted to New Relic until the queued errors have been sent: undefined method `wine_id' for nil:NilClass
+[2016-01-11 15:04:15 -0800 Yoshihiro-Luks-MacBook.local (64653)] WARN : The error reporting queue has reached 20. The error detail for this and subsequent errors will not be transmitted to New Relic until the queued errors have been sent: undefined method `wine_id' for nil:NilClass
+[2016-01-11 15:04:20 -0800 Yoshihiro-Luks-MacBook.local (64653)] WARN : The error reporting queue has reached 20. The error detail for this and subsequent errors will not be transmitted to New Relic until the queued errors have been sent: undefined method `wine_id' for nil:NilClass
+[2016-01-11 15:08:36 -0800 Yoshihiro-Luks-MacBook.local (64653)] WARN : The error reporting queue has reached 20. The error detail for this and subsequent errors will not be transmitted to New Relic until the queued errors have been sent: undefined method `wine_id' for nil:NilClass

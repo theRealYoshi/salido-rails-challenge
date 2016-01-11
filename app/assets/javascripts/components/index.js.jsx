@@ -29,22 +29,21 @@ var Index = React.createClass({
     return (
       <div className='index'>
         <div className='wines-container'>
-          <a className='create-button'
+          <button className='create-button'
              onClick={this._navigateAddWineForm}
              id="create">
            Add More Wine to Database
-         </a>
+         </button>
           <label>Wine Products:</label>
           {
             this.state.wines.map(function(wine){
               return (
                 <div>
                   <h3>{wine.wine_name}</h3>
-                  <a onClick={this._navigateWineShow}
+                  <button onClick={this._navigateWineShow}
                      id={wine.wine_id}>
-                    Wine Page
-                  </a>
-                  <h4>Add update button here</h4>
+                    {wine.wine_name} Wine Page
+                  </button>
                   <ul>
                     <li>id: {wine.wine_id}</li>
                     <li>description: {wine.wine_description}</li>
