@@ -1,4 +1,5 @@
 class Api::WinesController < ApplicationController
+
   def index
     @wines = Wine.all
   end
