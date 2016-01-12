@@ -10,7 +10,6 @@ class Api::WinesController < ApplicationController
   end
 
   def create
-    puts params[:wine]
     @wine = Wine.create(
       wine_id: params[:wine][:wine_id],
       wine_name: params[:wine][:wine_name] || "",
